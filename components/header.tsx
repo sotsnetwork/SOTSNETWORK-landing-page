@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { useEffect, useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
@@ -8,6 +9,12 @@ import { Menu } from "lucide-react"
 import Link from "next/link" // Import Link for client-side navigation
 
 export function Header() {
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
   const navItems = [
     { name: "Features", href: "#features-section" },
     { name: "Pricing", href: "#pricing-section" },
@@ -16,6 +23,8 @@ export function Header() {
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
+    if (!isMounted) return
+    
     const targetId = href.substring(1) // Remove '#' from href
     const targetElement = document.getElementById(targetId)
     if (targetElement) {
