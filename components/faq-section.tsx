@@ -37,52 +37,54 @@ const faqData = [
   },
 ]
 
-interface FAQItemProps {
+const FAQItem = ({ question, answer, isOpen, onToggle }: {
   question: string
   answer: string
   isOpen: boolean
   onToggle: () => void
-}
-
-const FAQItem = ({ question, answer, isOpen, onToggle }: FAQItemProps) => {
+}) => {
   return (
     <div
-      className="w-full bg-card border border-border rounded-lg overflow-hidden cursor-pointer hover:bg-accent/50 transition-colors"
+      className="w-full bg-card border border-border rounded-lg overflow-hidden cursor-pointer hover:bg-accent/50 transition-all duration-200"
       onClick={onToggle}
     >
       <div className="w-full px-6 py-4 flex justify-between items-center">
-        <div className="flex-1 text-foreground text-base font-medium">{question}</div>
-        <div className="flex justify-center items-center ml-4">
+        <div className="flex-1 text-foreground text-base font-medium pr-4">
+          {question}
+        </div>
+        <div className="flex-shrink-0">
           <ChevronDown
-            className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${
+            className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${
               isOpen ? "rotate-180" : "rotate-0"
             }`}
           />
         </div>
       </div>
       
-      {isOpen && (
+      <div className={`overflow-hidden transition-all duration-200 ${
+        isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+      }`}>
         <div className="px-6 pb-4">
           <div className="text-muted-foreground text-sm leading-relaxed border-t border-border pt-4">
             {answer}
           </div>
         </div>
-      )}
+      </div>
     </div>
   )
 }
 
 export function FAQSection() {
-  const [openItems, setOpenItems] = useState<Set<number>>(new Set())
+  const [openItems, setOpenItems] = useState<number[]>([])
   
   const toggleItem = (index: number) => {
-    const newOpenItems = new Set(openItems)
-    if (newOpenItems.has(index)) {
-      newOpenItems.delete(index)
-    } else {
-      newOpenItems.add(index)
-    }
-    setOpenItems(newOpenItems)
+    setOpenItems(prev => {
+      if (prev.includes(index)) {
+        return prev.filter(item => item !== index)
+      } else {
+        return [...prev, index]
+      }
+    })
   }
   
   return (
@@ -105,8 +107,9 @@ export function FAQSection() {
         {faqData.map((faq, index) => (
           <FAQItem 
             key={index} 
-            {...faq} 
-            isOpen={openItems.has(index)} 
+            question={faq.question}
+            answer={faq.answer}
+            isOpen={openItems.includes(index)} 
             onToggle={() => toggleItem(index)} 
           />
         ))}
