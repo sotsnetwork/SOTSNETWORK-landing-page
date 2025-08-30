@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
@@ -37,6 +38,13 @@ export function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-3">
+            <Image
+              src="/real logo.svg"
+              alt="SOTS NETWORK Logo"
+              width={40}
+              height={44}
+              className="h-11 w-auto"
+            />
             <span className="text-foreground text-xl font-semibold">SOTS NETWORK</span>
           </div>
           <nav className="hidden md:flex items-center gap-2">
