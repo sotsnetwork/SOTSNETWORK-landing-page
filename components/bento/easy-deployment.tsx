@@ -1,170 +1,182 @@
+"use client"
+
 import type React from "react"
-import { motion } from "framer-motion"
 
-interface DeploymentEasyProps {
-  /** Width of component – number (px) or any CSS size value */
-  width?: number | string
-  /** Height of component – number (px) or any CSS size value */
-  height?: number | string
-  /** Extra Tailwind / CSS classes for root element */
-  className?: string
-}
-
-const DeploymentEasy: React.FC<DeploymentEasyProps> = ({ width = "100%", height = "100%", className = "" }) => {
-  /* ------------------------------------------------------------
-   * Theme-based design tokens using global CSS variables
-   * ---------------------------------------------------------- */
+const EasyDeployment: React.FC = () => {
   const themeVars = {
-    "--deploy-primary-color": "hsl(var(--primary))",
-    "--deploy-background-color": "hsl(var(--background))",
-    "--deploy-text-color": "hsl(var(--foreground))",
-    "--deploy-text-secondary": "hsl(var(--muted-foreground))",
-    "--deploy-border-color": "hsl(var(--border))",
-  } as React.CSSProperties
-
-  /* ------------------------------------------------------------
-   * Console log output (static for demo) – can be replaced via props
-   * ---------------------------------------------------------- */
-  const logLines = [
-    "[16:37:25.637] Running build in Washington, D.C., USA (East) – iad1",
-    "[16:37:25.638] Build machine configuration: 2 cores, 8 GB",
-    "[16:37:25.653] Retrieving list of deployment files...",
-    "[16:37:25.741] Previous build caches not available",
-    "[16:37:25.979] Downloading 84 deployment files...",
-    '[16:37:29.945] Running "vercel build"',
-    "[16:37:30.561] Vercel CLI 44.5.0",
-    '[16:37:30.880] Running "install" command: `bun install`...',
-    "[16:37:30.914] bun install v1.2.19 (aad3abea)",
-    "[16:37:30.940] Resolving dependencies",
-    "[16:37:34.436] Resolved, downloaded and extracted [1116]",
-    '[16:37:34.436] warn: incorrect peer dependency "react@19.1.0"',
-    "[16:37:37.265] Saved lockfile",
-    "[16:37:39.076] Next.js anonymous telemetry notice",
-    "[16:37:39.137] ▲ Next.js 15.2.4",
-    "[16:37:41.439] ✓ Compiled successfully",
-    "[16:37:53.979] ✓ Generated static pages",
-    "[16:38:00.585] ○ (Static) prerendered as static content",
-    "[16:38:01.099] Build Completed in /vercel/output [30s]",
-    "🚀 Deployment complete – Easy!",
-  ]
+    "--deployment-primary-color": "hsl(var(--primary))",
+    "--deployment-background-color": "hsl(var(--background))",
+    "--deployment-text-color": "hsl(var(--foreground))",
+    "--deployment-text-dark": "hsl(var(--primary-foreground))",
+    "--deployment-border-color": "hsl(var(--border))",
+    "--deployment-border-main": "hsl(var(--foreground) / 0.1)",
+    "--deployment-highlight-primary": "hsl(var(--primary) / 0.12)",
+    "--deployment-highlight-header": "hsl(var(--accent) / 0.2)",
+  }
 
   return (
     <div
-      className={`w-full h-full flex items-center justify-center p-4 relative ${className}`}
       style={{
-        width,
-        height,
+        width: "100%",
+        height: "100%",
         position: "relative",
         background: "transparent",
         ...themeVars,
-      }}
+      } as React.CSSProperties}
       role="img"
-      aria-label="Deployment console output with Deploy on Vercel button"
+      aria-label="Easy Deployment interface showing deployment options and status"
     >
-      {/* -------------------------------------------------------- */}
-      {/* Console / Terminal panel                                */}
-      {/* -------------------------------------------------------- */}
+      {/* Background Message Box (Blurred) */}
       <div
         style={{
           position: "absolute",
-          top: "50%",
+          top: "30px",
           left: "50%",
-          transform: "translate(-50%, -50%)",
+          transform: "translateX(-50%) scale(0.9)",
           width: "340px",
-          height: "239px",
-          background: "linear-gradient(180deg, var(--deploy-background-color) 0%, transparent 100%)",
-          backdropFilter: "blur(7.907px)",
-          borderRadius: "10px",
+          height: "205.949px",
+          background: "linear-gradient(180deg, var(--deployment-background-color) 0%, transparent 100%)",
+          opacity: 0.6,
+          borderRadius: "8.826px",
+          border: "0.791px solid var(--deployment-border-color)",
           overflow: "hidden",
+          backdropFilter: "blur(16px)",
         }}
       >
-        {/* Inner translucent panel – replicates subtle overlay */}
         <div
+          className="border rounded-lg bg-card"
           style={{
-            position: "absolute",
-            inset: "2px",
-            borderRadius: "8px",
-            background: "hsl(var(--foreground) / 0.08)",
-          }}
-        />
-
-        {/* Log text */}
-        <div
-          style={{
-            position: "relative",
-            padding: "8px",
+            padding: "7.355px 8.826px",
             height: "100%",
+            boxSizing: "border-box",
             overflow: "hidden",
-            fontFamily: "'Geist Mono', 'SF Mono', Monaco, Consolas, 'Liberation Mono', monospace",
-            fontSize: "10px",
-            lineHeight: "16px",
-            color: "var(--deploy-text-color)",
-            whiteSpace: "pre",
           }}
         >
-          {logLines.map((line, index) => (
-            <p key={index} style={{ margin: 0 }}>
-              {line}
-            </p>
-          ))}
+          <div
+            style={{
+              fontFamily: "'Geist Mono', 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+              fontSize: "9.562px",
+              lineHeight: "14.711px",
+              letterSpacing: "-0.2942px",
+              color: "hsl(var(--muted-foreground))",
+              width: "100%",
+              maxWidth: "320px",
+              margin: 0,
+            }}
+          >
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>deploy:</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>  provider: vercel</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>  environment:</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>    production:</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      url: ${{ secrets.PROD_URL }}</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      branch: main</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>    staging:</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      url: ${{ secrets.STAGING_URL }}</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      branch: develop</p>
+          </div>
         </div>
-
-        {/* Inner border overlay */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            border: "0.791px solid var(--deploy-border-color)",
-            borderRadius: "10px",
-            pointerEvents: "none",
-          }}
-        />
       </div>
 
-      {/* -------------------------------------------------------- */}
-      {/* Call-to-action button                                   */}
-      {/* -------------------------------------------------------- */}
-      <motion.button
+      {/* Foreground Message Box (Main) */}
+      <div
         style={{
           position: "absolute",
-          top: "calc(50% + 57.6px)",
+          top: "51.336px",
           left: "50%",
-          transform: "translate(-50%, -50%)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "6.375px",
-          padding: "5.1px 10.2px",
-          background: "var(--deploy-primary-color)",
-          color: "hsl(var(--primary-foreground))",
-          border: "none",
-          cursor: "pointer",
-          borderRadius: "8.925px",
-          fontFamily: "'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-          fontSize: "16.575px",
-          lineHeight: "25.5px",
-          letterSpacing: "-0.51px",
-          fontWeight: 500,
-          whiteSpace: "nowrap",
+          transform: "translateX(-50%)",
+          width: "340px",
+          height: "205.949px",
+          background: "linear-gradient(180deg, var(--deployment-background-color) 0%, transparent 100%)",
+          borderRadius: "8.826px",
+          border: "0.791px solid var(--deployment-border-main)",
+          overflow: "hidden",
+          backdropFilter: "blur(16px)",
           boxShadow:
-            "0px 42.075px 11.475px rgba(0, 0, 0, 0), 0px 26.775px 10.2px rgba(0, 0, 0, 0.01), 0px 15.3px 8.925px rgba(0, 0, 0, 0.05), 0px 6.375px 6.375px rgba(0, 0, 0, 0.09), 0px 1.275px 3.825px rgba(0, 0, 0, 0.1)",
-        }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        animate={{ 
-          y: [0, -2, 0],
-          scale: [1, 1.01, 1]
-        }}
-        transition={{ 
-          duration: 3, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
+            "0px 52.186px 14.233px rgba(0, 0, 0, 0), 0px 33.209px 12.651px rgba(0, 0, 0, 0.01), 0px 18.977px 11.07px rgba(0, 0, 0, 0.05), 0px 7.907px 7.907px rgba(0, 0, 0, 0.09), 0px 1.581px 2.372px rgba(0, 0, 0, 0.1)",
         }}
       >
-        🚀 Get Support
-      </motion.button>
+        <div
+          className="border rounded-lg bg-card"
+          style={{
+            padding: "7.355px 8.826px",
+            height: "100%",
+            boxSizing: "border-box",
+            overflow: "hidden",
+            position: "relative",
+          }}
+        >
+          <div
+            style={{
+              fontFamily: "'Geist Mono', 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+              fontSize: "10.279px",
+              lineHeight: "15.814px",
+              letterSpacing: "-0.3163px",
+              color: "var(--deployment-text-color)",
+              width: "100%",
+              maxWidth: "320px",
+              position: "relative",
+              zIndex: 2,
+              margin: 0,
+            }}
+          >
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>deploy:</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>  provider: vercel</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>  environment:</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>    production:</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      url: ${{ secrets.PROD_URL }}</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      branch: main</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>    staging:</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      url: ${{ secrets.STAGING_URL }}</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      branch: develop</p>
+          </div>
+          <button
+            style={{
+              position: "absolute",
+              top: "calc(50% + 29.745px)",
+              right: "20px",
+              transform: "translateY(-50%)",
+              zIndex: 3,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "3.953px",
+              background: "var(--deployment-primary-color)",
+              color: "var(--deployment-text-dark)",
+              border: "none",
+              cursor: "pointer",
+              fontWeight: 500,
+              whiteSpace: "nowrap",
+              transition: "all 0.2s ease",
+              padding: "3.163px 6.326px",
+              borderRadius: "5.535px",
+              fontSize: "10.279px",
+              lineHeight: "15.814px",
+              letterSpacing: "-0.3163px",
+              boxShadow:
+                "0px 26.093px 7.116px rgba(0, 0, 0, 0), 0px 16.605px 6.326px rgba(0, 0, 0, 0.01), 0px 9.488px 5.535px rgba(0, 0, 0, 0.05), 0px 3.953px 3.953px rgba(0,0, 0, 0.09), 0px 0.791px 2.372px rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                fontWeight: 500,
+              }}
+            >
+              Get Support
+            </span>
+            <span
+              style={{
+                fontFamily: "'SF Pro', -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
+                fontWeight: 500,
+              }}
+            >
+              ⌘D
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   )
 }
 
-export default DeploymentEasy
+export default EasyDeployment
