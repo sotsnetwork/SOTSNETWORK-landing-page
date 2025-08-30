@@ -438,9 +438,8 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 space-y-4 md:space-y-5 lg:space-y-6 mb-6 md:mb-7 lg:mb-9 max-w-md md:max-w-[500px] lg:max-w-[588px] mt-16 md:mt-[120px] lg:mt-[160px] px-4">
-        <h1 className="text-foreground text-3xl md:text-4xl lg:text-6xl font-semibold leading-tight">
-          <span className="block">AI & Agentic Solutions For</span>
-          <span className="block">Creators & Businesses</span>
+        <h1 className="text-foreground text-4xl md:text-5xl lg:text-7xl font-semibold leading-tight">
+          AI & Agentic Solutions
         </h1>
         <p className="text-muted-foreground text-base md:text-base lg:text-lg font-medium leading-relaxed max-w-lg mx-auto">
           Integrate AI-Powered Solutions Into Existing Workflows & Web3.0 Projects
