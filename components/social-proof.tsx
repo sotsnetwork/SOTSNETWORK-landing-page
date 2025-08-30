@@ -7,14 +7,14 @@ export function SocialProof() {
         Trusted by businesses worldwide
       </div>
       
-      {/* Cursor Logo - Prominently displayed */}
+      {/* SOTS NETWORK Logo - Prominently displayed */}
       <div className="flex justify-center items-center mb-8">
         <Image
-          src="/logos/cursor-logo.svg"
-          alt="Cursor Logo"
+          src="/real logo.svg"
+          alt="SOTS NETWORK Logo"
           width={120}
-          height={40}
-          className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+          height={132}
+          className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
         />
       </div>
       
