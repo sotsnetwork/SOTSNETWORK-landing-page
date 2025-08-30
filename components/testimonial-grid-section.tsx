@@ -10,7 +10,7 @@ const testimonials = [
   },
   {
     quote:
-      "I had no technical background and thought building a SaaS product was impossible. Chidera guided me through RTWV Academy and I launched my first MVP. I'm grateful he believed I could do it.",
+      "I had no technical background and thought building a SaaS product was impossible. Chidera guided me through and I launched my first MVP. I'm grateful he believed I could do it.",
     name: "Sophia L.",
     company: "Startup Founder, USA",
     type: "small-dark",
