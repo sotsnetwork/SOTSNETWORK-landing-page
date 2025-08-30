@@ -3,66 +3,57 @@ import Image from "next/image"
 const testimonials = [
   {
     quote:
-      "The real-time code suggestions from Pointer feel like having a senior engineer reviewing every line of code as you write. The accuracy of its recommendations has improved our overall code quality, reduced review time.",
-    name: "Annette Black",
-    company: "Sony",
-    avatar: "/images/avatars/annette-black.png",
+      "Working with Chidera changed how our team approaches automation. He built an AI workflow that cut response time from hours to minutes. We appreciate his patience in explaining each step.",
+    name: "Martin S.",
+    company: "Operations Manager, Germany",
     type: "large-teal",
   },
   {
     quote:
-      "Integrating Pointer into our stack was smooth, and the MCP server connections saved us days of configuration work",
-    name: "Dianne Russell",
-    company: "McDonald's",
-    avatar: "/images/avatars/dianne-russell.png",
+      "I had no technical background and thought building a SaaS product was impossible. Chidera guided me through RTWV Academy and I launched my first MVP. I'm grateful he believed I could do it.",
+    name: "Sophia L.",
+    company: "Startup Founder, USA",
     type: "small-dark",
   },
   {
     quote:
-      "Pointer’s multi-agent coding feature has been a game changer. We’re fixing complex bugs in hours instead of spending entire sprints on them.",
-    name: "Cameron Williamson",
-    company: "IBM",
-    avatar: "/images/avatars/cameron-williamson.png",
+      "Chidera built our company website from scratch. He listened to what we needed and turned it into something our customers enjoy using. It feels like our brand finally has a home online.",
+    name: "Elena R.",
+    company: "Marketing Lead, Spain",
     type: "small-dark",
   },
   {
     quote:
-      "We no longer juggle multiple tools. Pointer brought all our integrations together in one place, which simplified our entire workflow.",
-    name: "Robert Fox",
-    company: "MasterCard",
-    avatar: "/images/avatars/robert-fox.png",
+      "We needed an AI solution to improve client engagement. Chidera delivered fast and stayed involved until everything ran smoothly. It has improved how we serve our customers every day.",
+    name: "Brian C.",
+    company: "Product Director, USA",
     type: "small-dark",
   },
   {
     quote:
-      "We started with the free plan just to test it out, but within a week we upgraded to Pro. Now, we can’t imagine coding without it",
-    name: "Darlene Robertson",
-    company: "Ferrari",
-    avatar: "/images/avatars/darlene-robertson.png",
+      "My portfolio site was old and slow. Chidera rebuilt it into something modern and professional. I've since received more job offers and feel proud sharing my link.",
+    name: "David K.",
+    company: "Designer, UK",
     type: "small-dark",
   },
   {
     quote:
-      "Collaborative coding feels effortless now. With Pointer’s real-time previews, pair programming has become faster and more productive.",
-    name: "Cody Fisher",
-    company: "Apple",
-    avatar: "/images/avatars/cody-fisher.png",
+      "Chidera helped us turn an idea into a working MVP in weeks. His support gave us the confidence to pitch investors with something real.",
+    name: "Laura P.",
+    company: "Startup Founder, France",
     type: "small-dark",
   },
   {
     quote:
-      "Deploying on Vercel with Pointer was not just simple, it felt seamless. We went from coding to seeing our changes live in minutes without worrying about build pipelines or configuration issues.",
-    name: "Albert Flores",
-    company: "Louis Vuitton",
-    avatar: "/images/avatars/albert-flores.png",
-    type: "large-light",
+      "Our brand needed AI integration but we didn't know where to start. Chidera broke everything down and delivered a solution that saved us money and time. We're thankful for his clarity.",
+    name: "James W.",
+    company: "Business Owner, USA",
+    type: "small-dark",
   },
 ]
 
-const TestimonialCard = ({ quote, name, company, avatar, type }) => {
+const TestimonialCard = ({ quote, name, company, type }) => {
   const isLargeCard = type.startsWith("large")
-  const avatarSize = isLargeCard ? 48 : 36
-  const avatarBorderRadius = isLargeCard ? "rounded-[41px]" : "rounded-[30.75px]"
   const padding = isLargeCard ? "p-6" : "p-[30px]"
 
   let cardClasses = `flex flex-col justify-between items-start overflow-hidden rounded-[10px] shadow-[0px_2px_4px_rgba(0,0,0,0.08)] relative ${padding}`
@@ -75,52 +66,31 @@ const TestimonialCard = ({ quote, name, company, avatar, type }) => {
 
   if (type === "large-teal") {
     cardClasses += " bg-primary"
-    quoteClasses += " text-primary-foreground text-2xl font-medium leading-8"
-    nameClasses += " text-primary-foreground text-base font-normal leading-6"
-    companyClasses += " text-primary-foreground/60 text-base font-normal leading-6"
-    cardHeight = "h-[502px]"
-    backgroundElements = (
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/large-card-background.svg')", zIndex: 0 }}
-      />
-    )
+    quoteClasses = "text-primary-foreground text-base font-medium leading-6"
+    nameClasses = "text-primary-foreground text-sm font-semibold leading-5"
+    companyClasses = "text-primary-foreground/80 text-sm font-medium leading-5"
+    cardHeight = "h-[280px]"
   } else if (type === "large-light") {
-    cardClasses += " bg-[rgba(231,236,235,0.12)]"
-    quoteClasses += " text-foreground text-2xl font-medium leading-8"
-    nameClasses += " text-foreground text-base font-normal leading-6"
-    companyClasses += " text-muted-foreground text-base font-normal leading-6"
-    cardHeight = "h-[502px]"
-    backgroundElements = (
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-20"
-        style={{ backgroundImage: "url('/images/large-card-background.svg')", zIndex: 0 }}
-      />
-    )
+    cardClasses += " bg-white/10 backdrop-blur-sm border border-white/20"
+    quoteClasses = "text-foreground text-base font-medium leading-6"
+    nameClasses = "text-foreground text-sm font-semibold leading-5"
+    companyClasses = "text-muted-foreground text-sm font-medium leading-5"
+    cardHeight = "h-[280px]"
   } else {
-    cardClasses += " bg-card outline outline-1 outline-border outline-offset-[-1px]"
-    quoteClasses += " text-foreground/80 text-[17px] font-normal leading-6"
-    nameClasses += " text-foreground text-sm font-normal leading-[22px]"
-    companyClasses += " text-muted-foreground text-sm font-normal leading-[22px]"
-    cardHeight = "h-[244px]"
+    cardClasses += " bg-card/50 backdrop-blur-sm border border-border"
+    quoteClasses = "text-foreground text-sm font-medium leading-5"
+    nameClasses = "text-foreground text-sm font-semibold leading-5"
+    companyClasses = "text-muted-foreground text-sm font-medium leading-5"
+    cardHeight = "h-[200px]"
   }
 
   return (
-    <div className={`${cardClasses} ${cardWidth} ${cardHeight}`}>
-      {backgroundElements}
-      <div className={`relative z-10 font-normal break-words ${quoteClasses}`}>{quote}</div>
-      <div className="relative z-10 flex justify-start items-center gap-3">
-        <Image
-          src={avatar || "/placeholder.svg"}
-          alt={`${name} avatar`}
-          width={avatarSize}
-          height={avatarSize}
-          className={`w-${avatarSize / 4} h-${avatarSize / 4} ${avatarBorderRadius}`}
-          style={{ border: "1px solid rgba(255, 255, 255, 0.08)" }}
-        />
-        <div className="flex flex-col justify-start items-start gap-0.5">
-          <div className={nameClasses}>{name}</div>
-          <div className={companyClasses}>{company}</div>
+    <div className={`${cardClasses} ${cardHeight} ${cardWidth}`}>
+      <div className="flex flex-col justify-between items-start gap-4 h-full">
+        <p className={`${quoteClasses} flex-1`}>{quote}</p>
+        <div className="flex flex-col justify-start items-start gap-1">
+          <p className={nameClasses}>{name}</p>
+          <p className={companyClasses}>{company}</p>
         </div>
       </div>
     </div>
@@ -133,11 +103,11 @@ export function TestimonialGridSection() {
       <div className="self-stretch py-6 md:py-8 lg:py-14 flex flex-col justify-center items-center gap-2">
         <div className="flex flex-col justify-start items-center gap-4">
           <h2 className="text-center text-foreground text-3xl md:text-4xl lg:text-[40px] font-semibold leading-tight md:leading-tight lg:leading-[40px]">
-            Coding made effortless
+            What Our Clients Say
           </h2>
           <p className="self-stretch text-center text-muted-foreground text-sm md:text-sm lg:text-base font-medium leading-[18.20px] md:leading-relaxed lg:leading-relaxed">
-            {"Hear how developers ship products faster, collaborate seamlessly,"} <br />{" "}
-            {"and build with confidence using Pointer's powerful AI tools"}
+            {"Hear from entrepreneurs, business owners, and professionals"} <br />{" "}
+            {"who have transformed their ideas into reality with our help"}
           </p>
         </div>
       </div>
