@@ -18,7 +18,7 @@ export function PricingSection() {
       ],
       buttonText: "Get Started",
       buttonClass:
-        "bg-gray-400 text-gray-900 shadow-lg hover:bg-gray-500 font-bold text-lg py-3",
+        "bg-white text-black shadow-lg hover:bg-gray-100 font-bold text-lg py-3 border-2 border-gray-300",
     },
     {
       name: "Website & Landing Page",
@@ -35,7 +35,7 @@ export function PricingSection() {
       ],
       buttonText: "Get Quote",
       buttonClass:
-        "bg-primary text-white shadow-lg hover:bg-primary/90 font-bold text-lg py-3",
+        "bg-primary text-white shadow-lg hover:bg-primary/90 font-bold text-lg py-3 border-2 border-primary/50",
       popular: true,
     },
     {
