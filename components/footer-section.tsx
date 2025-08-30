@@ -11,7 +11,7 @@ export function FooterSection() {
         <div className="flex gap-3 items-stretch justify-center">
           <div className="flex items-center gap-3">
             <Image
-              src="/real logo.svg"
+              src="/the real logo.png"
               alt="SOTS NETWORK Logo"
               width={32}
               height={35}
