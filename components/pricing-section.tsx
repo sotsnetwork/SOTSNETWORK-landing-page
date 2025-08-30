@@ -18,7 +18,7 @@ export function PricingSection() {
       ],
       buttonText: "Get Started",
       buttonClass:
-        "bg-white text-gray-900 shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] outline outline-0.5 outline-[#1e29391f] outline-offset-[-0.5px] text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-gray-100 font-semibold",
+        "bg-primary text-white shadow-lg hover:bg-primary/90 font-bold text-lg py-3",
     },
     {
       name: "Website & Landing Page",
@@ -35,7 +35,7 @@ export function PricingSection() {
       ],
       buttonText: "Get Quote",
       buttonClass:
-        "bg-primary shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] text-primary-foreground text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-primary/90 font-semibold",
+        "bg-gray-600 text-white shadow-lg hover:bg-gray-700 font-bold text-lg py-3",
       popular: true,
     },
     {
@@ -53,7 +53,7 @@ export function PricingSection() {
       ],
       buttonText: "Get Quote",
       buttonClass:
-        "bg-white text-gray-900 shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-gray-100 font-semibold",
+        "bg-gray-600 text-white shadow-lg hover:bg-gray-700 font-bold text-lg py-3",
     },
   ]
 
