@@ -1,0 +1,14 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cursor Icon -->
+  <g>
+    <!-- Cursor arrow shape -->
+    <path d="M8 4L20 20L12 20L16 36L8 20L0 20L8 4Z" fill="hsl(var(--primary))"/>
+    <!-- Cursor dot -->
+    <circle cx="8" cy="20" r="2" fill="hsl(var(--foreground))"/>
+  </g>
+  
+  <!-- Cursor Text -->
+  <text x="30" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="hsl(var(--foreground))">
+    Cursor
+  </text>
+</svg>
