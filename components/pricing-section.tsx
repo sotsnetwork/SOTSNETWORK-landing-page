@@ -18,7 +18,7 @@ export function PricingSection() {
       ],
       buttonText: "Get Started",
       buttonClass:
-        "bg-primary text-white shadow-lg hover:bg-primary/90 font-bold text-lg py-3",
+        "bg-gray-400 text-gray-900 shadow-lg hover:bg-gray-500 font-bold text-lg py-3",
     },
     {
       name: "Website & Landing Page",
@@ -35,7 +35,7 @@ export function PricingSection() {
       ],
       buttonText: "Get Quote",
       buttonClass:
-        "bg-gray-600 text-white shadow-lg hover:bg-gray-700 font-bold text-lg py-3",
+        "bg-primary text-white shadow-lg hover:bg-primary/90 font-bold text-lg py-3",
       popular: true,
     },
     {
@@ -53,7 +53,7 @@ export function PricingSection() {
       ],
       buttonText: "Get Quote",
       buttonClass:
-        "bg-gray-600 text-white shadow-lg hover:bg-gray-700 font-bold text-lg py-3",
+        "bg-gray-400 text-gray-900 shadow-lg hover:bg-gray-500 font-bold text-lg py-3",
     },
   ]
 
@@ -88,15 +88,15 @@ export function PricingSection() {
                 </div>
               )}
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold text-foreground mb-2">{service.name}</h3>
+                <h3 className="text-2xl font-semibold text-white mb-2">{service.name}</h3>
                 <div className="text-3xl font-bold text-primary mb-2">{service.price}</div>
-                <p className="text-muted-foreground text-sm">{service.description}</p>
+                <p className="text-white text-sm">{service.description}</p>
               </div>
               <ul className="space-y-3 mb-8">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-foreground">{feature}</span>
+                    <span className="text-sm text-white">{feature}</span>
                   </li>
                 ))}
               </ul>
