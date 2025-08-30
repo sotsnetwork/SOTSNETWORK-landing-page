@@ -6,11 +6,11 @@ import { motion } from "framer-motion"
 const RealtimeCodingPreviews: React.FC = () => {
   const themeVars = {
     "--realtime-primary-color": "hsl(var(--primary))",
-    "--realtime-background-editor": "hsl(var(--background) / 0.8)", // Tinted gray from background
-    "--realtime-background-preview": "hsl(var(--background) / 0.8)", // Tinted gray from background
+    "--realtime-background-editor": "hsl(var(--background) / 0.8)",
+    "--realtime-background-preview": "hsl(var(--background) / 0.8)",
     "--realtime-text-color": "hsl(var(--foreground))",
     "--realtime-text-editor": "hsl(var(--foreground))",
-    "--realtime-text-preview": "hsl(var(--primary-foreground))", // For button text
+    "--realtime-text-preview": "hsl(var(--primary-foreground))",
     "--realtime-border-color": "hsl(var(--border))",
     "--realtime-border-main": "hsl(var(--border))",
     "--realtime-connection-color": "hsl(var(--muted-foreground))",
@@ -18,16 +18,14 @@ const RealtimeCodingPreviews: React.FC = () => {
 
   return (
     <div
-      className="" // Remove className prop if not used
-      style={
-        {
-          width: "100%", // Use 100% for responsiveness within parent
-          height: "100%", // Use 100% for responsiveness within parent
-          position: "relative",
-          background: "transparent",
-          ...themeVars,
-        } as React.CSSProperties
-      }
+      className=""
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "relative",
+        background: "transparent",
+        ...themeVars,
+      } as React.CSSProperties}
       role="img"
       aria-label="Realtime Coding Previews interface showing split-screen code editor and live preview"
     >
@@ -128,7 +126,6 @@ const RealtimeCodingPreviews: React.FC = () => {
           backdropFilter: "blur(7.907px)",
           borderRadius: "9.488px",
           borderTopRightRadius: "9.488px",
-          // Removed the border property from here
           overflow: "hidden",
           boxSizing: "border-box",
         }}
@@ -145,7 +142,7 @@ const RealtimeCodingPreviews: React.FC = () => {
             flexDirection: "row",
             alignItems: "flex-start",
             justifyContent: "center",
-            background: "var(--realtime-background-preview)", // Applied solid background here
+            background: "var(--realtime-background-preview)",
           }}
         >
           {/* Download Button - Exact positioning from Figma */}
@@ -191,14 +188,14 @@ const RealtimeCodingPreviews: React.FC = () => {
                 lineHeight: "31.628px",
                 letterSpacing: "-0.6326px",
                 fontWeight: 500,
-                color: "var(--realtime-text-preview)", // Changed to use theme variable
+                color: "var(--realtime-text-preview)",
                 textAlign: "left",
                 whiteSpace: "pre",
               }}
             >
               View Demo
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -218,8 +215,8 @@ const RealtimeCodingPreviews: React.FC = () => {
         <div
           style={{
             position: "relative",
-            width: "2px", // Width of the line (stroke width)
-            height: "285.088px", // Length of the line
+            width: "2px",
+            height: "285.088px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -251,10 +248,6 @@ const RealtimeCodingPreviews: React.FC = () => {
           </svg>
         </div>
       </div>
-
-      {/* Live Recording Indicator */}
-
-      {/* Sync Indicator at connection point */}
 
       <style jsx>{`
         @keyframes pulse {
