@@ -128,7 +128,7 @@ const McpConnectivityIllustration: React.FC<McpConnectivityIllustrationProps> = 
                   <img
                     src={integration.icon || "/placeholder.svg"}
                     alt={integration.name}
-                    className="w-full h-full object-contain opacity-70 grayscale" // Apply opacity and grayscale
+                    className="w-full h-full object-contain opacity-70 grayscale"
                   />
                 </div>
                 <span
@@ -169,7 +169,7 @@ const McpConnectivityIllustration: React.FC<McpConnectivityIllustrationProps> = 
                   </span>
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
