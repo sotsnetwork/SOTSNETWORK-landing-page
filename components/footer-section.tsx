@@ -1,6 +1,7 @@
 "use client"
 
 import { Twitter, Github, Linkedin, Mail } from "lucide-react"
+import Image from "next/image"
 
 export function FooterSection() {
   return (
@@ -8,7 +9,16 @@ export function FooterSection() {
       {/* Left Section: Logo, Description, Social Links */}
       <div className="flex flex-col justify-start items-start gap-8 p-4 md:p-8">
         <div className="flex gap-3 items-stretch justify-center">
-          <div className="text-center text-foreground text-xl font-semibold leading-4">SOTS NETWORK</div>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/real logo.svg"
+              alt="SOTS NETWORK Logo"
+              width={32}
+              height={35}
+              className="h-8 w-auto"
+            />
+            <div className="text-center text-foreground text-xl font-semibold leading-4">SOTS NETWORK</div>
+          </div>
         </div>
         <p className="text-foreground/90 text-sm font-medium leading-[18px] text-left">AI & Web Solutions</p>
         <div className="flex justify-start items-start gap-3">
