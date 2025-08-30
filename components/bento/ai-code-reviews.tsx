@@ -1,5 +1,6 @@
+"use client"
+
 import type React from "react"
-import { motion } from "framer-motion"
 
 const AiCodeReviews: React.FC = () => {
   const themeVars = {
@@ -101,48 +102,26 @@ const AiCodeReviews: React.FC = () => {
           left: "50%",
           transform: "translateX(-50%)",
           width: "340px",
-          height: "221.395px",
-          background: "var(--ai-background-color)",
-          backdropFilter: "blur(16px)",
-          borderRadius: "9.488px",
-          border: "1px solid var(--ai-border-main)",
+          height: "205.949px",
+          background: "linear-gradient(180deg, var(--ai-background-color) 0%, transparent 100%)",
+          borderRadius: "8.826px",
+          border: "0.791px solid var(--ai-border-main)",
           overflow: "hidden",
+          backdropFilter: "blur(16px)",
+          boxShadow:
+            "0px 52.186px 14.233px rgba(0, 0, 0, 0), 0px 33.209px 12.651px rgba(0, 0, 0, 0.01), 0px 18.977px 11.07px rgba(0, 0, 0, 0.05), 0px 7.907px 7.907px rgba(0, 0, 0, 0.09), 0px 1.581px 2.372px rgba(0, 0, 0, 0.1)",
         }}
       >
         <div
-          className="bg-card border border-border"
+          className="border rounded-lg bg-card"
           style={{
-            padding: "9.488px",
+            padding: "7.355px 8.826px",
             height: "100%",
             boxSizing: "border-box",
-            position: "relative",
             overflow: "hidden",
+            position: "relative",
           }}
         >
-          <div
-            style={{
-              position: "absolute",
-              left: 0,
-              right: 0,
-              width: "100%",
-              top: "47.67px",
-              height: "33.118px",
-              background: "hsl(var(--foreground) / 0.08)",
-              zIndex: 1,
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              left: 0,
-              right: 0,
-              width: "100%",
-              top: "80.791px",
-              height: "45.465px",
-              background: "var(--ai-highlight-primary)",
-              zIndex: 1,
-            }}
-          />
           <div
             style={{
               fontFamily: "'Geist Mono', 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
@@ -182,7 +161,7 @@ const AiCodeReviews: React.FC = () => {
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}> /&gt;</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}> &lt;/svg&gt;</p>
           </div>
-          <motion.button
+          <button
             style={{
               position: "absolute",
               top: "calc(50% + 29.745px)",
@@ -208,17 +187,6 @@ const AiCodeReviews: React.FC = () => {
               boxShadow:
                 "0px 26.093px 7.116px rgba(0, 0, 0, 0), 0px 16.605px 6.326px rgba(0, 0, 0, 0.01), 0px 9.488px 5.535px rgba(0, 0, 0, 0.05), 0px 3.953px 3.953px rgba(0,0, 0, 0.09), 0px 0.791px 2.372px rgba(0, 0, 0, 0.1)",
             }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            animate={{ 
-              y: [0, -2, 0],
-              opacity: [0.8, 1, 0.8]
-            }}
-            transition={{ 
-              duration: 3, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
           >
             <span
               style={{
@@ -236,7 +204,7 @@ const AiCodeReviews: React.FC = () => {
             >
               ⌘Y
             </span>
-          </motion.button>
+          </button>
         </div>
       </div>
     </div>
