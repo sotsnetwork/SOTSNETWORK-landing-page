@@ -1,5 +1,6 @@
 import type React from "react"
 import { Search } from "lucide-react"
+import { motion } from "framer-motion"
 
 interface McpConnectivityIllustrationProps {
   className?: string
@@ -83,7 +84,7 @@ const McpConnectivityIllustration: React.FC<McpConnectivityIllustrationProps> = 
           </div>
           {/* Integration List */}
           {integrations.map((integration, index) => (
-            <div
+            <motion.div
               key={integration.name}
               style={{
                 display: "flex",
@@ -93,6 +94,17 @@ const McpConnectivityIllustration: React.FC<McpConnectivityIllustrationProps> = 
                 borderBottom: index < integrations.length - 1 ? "0.479px solid hsl(var(--border))" : "none",
                 width: "100%",
                 boxSizing: "border-box",
+              }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ 
+                duration: 0.4, 
+                delay: index * 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+              whileHover={{ 
+                x: 5,
+                transition: { duration: 0.2 }
               }}
             >
               <div
