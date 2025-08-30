@@ -45,42 +45,36 @@ interface FAQItemProps {
 }
 
 const FAQItem = ({ question, answer, isOpen, onToggle }: FAQItemProps) => {
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    onToggle()
-  }
   return (
     <div
-      className={`w-full bg-[rgba(231,236,235,0.08)] shadow-[0px_2px_4px_rgba(0,0,0,0.16)] overflow-hidden rounded-[10px] outline outline-1 outline-border outline-offset-[-1px] transition-all duration-500 ease-out cursor-pointer`}
-      onClick={handleClick}
+      className="w-full bg-card border border-border rounded-lg overflow-hidden cursor-pointer hover:bg-accent/50 transition-colors"
+      onClick={onToggle}
     >
-      <div className="w-full px-5 py-[18px] pr-4 flex justify-between items-center gap-5 text-left transition-all duration-300 ease-out">
-        <div className="flex-1 text-foreground text-base font-medium leading-6 break-words">{question}</div>
-        <div className="flex justify-center items-center">
+      <div className="w-full px-6 py-4 flex justify-between items-center">
+        <div className="flex-1 text-foreground text-base font-medium">{question}</div>
+        <div className="flex justify-center items-center ml-4">
           <ChevronDown
-            className={`w-6 h-6 text-muted-foreground-dark transition-all duration-500 ease-out ${isOpen ? "rotate-180 scale-110" : "rotate-0 scale-100"}`}
+            className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${
+              isOpen ? "rotate-180" : "rotate-0"
+            }`}
           />
         </div>
       </div>
-      <div
-        className={`overflow-hidden transition-all duration-500 ease-out ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
-        style={{
-          transitionProperty: "max-height, opacity, padding",
-          transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-        }}
-      >
-        <div
-          className={`px-5 transition-all duration-500 ease-out ${isOpen ? "pb-[18px] pt-2 translate-y-0" : "pb-0 pt-0 -translate-y-2"}`}
-        >
-          <div className="text-foreground/80 text-sm font-normal leading-6 break-words">{answer}</div>
+      
+      {isOpen && (
+        <div className="px-6 pb-4">
+          <div className="text-muted-foreground text-sm leading-relaxed border-t border-border pt-4">
+            {answer}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
 
 export function FAQSection() {
   const [openItems, setOpenItems] = useState<Set<number>>(new Set())
+  
   const toggleItem = (index: number) => {
     const newOpenItems = new Set(openItems)
     if (newOpenItems.has(index)) {
@@ -92,26 +86,29 @@ export function FAQSection() {
   }
   
   return (
-    <section className="w-full pt-[66px] pb-20 md:pb-40 px-5 relative flex flex-col justify-center items-center">
+    <section className="w-full py-20 px-6 relative">
       {/* Background blur effect */}
-      <div className="w-[300px] h-[500px] absolute top-[150px] left-1/2 -translate-x-1/2 origin-top-left rotate-[-33.39deg] bg-primary/10 blur-[100px] z-0" />
+      <div className="w-[300px] h-[500px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 origin-center rotate-[-33.39deg] bg-primary/10 blur-[100px] z-0" />
       
       {/* Header section */}
-      <div className="self-stretch pt-8 pb-8 md:pt-14 md:pb-14 flex flex-col justify-center items-center gap-2 relative z-10">
-        <div className="flex flex-col justify-start items-center gap-4">
-          <h2 className="w-full max-w-[435px] text-center text-foreground text-4xl font-semibold leading-10 break-words">
-            FAQs
-          </h2>
-          <p className="self-stretch text-center text-muted-foreground text-sm font-medium leading-[18.20px] break-words">
-            Everything you need to know about SOTS NETWORK and how we can transform your business with AI solutions
-          </p>
-        </div>
+      <div className="relative z-10 text-center mb-12">
+        <h2 className="text-4xl font-semibold text-foreground mb-4">
+          FAQs
+        </h2>
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          Everything you need to know about SOTS NETWORK and how we can transform your business with AI solutions
+        </p>
       </div>
       
       {/* FAQ items */}
-      <div className="w-full max-w-[600px] pt-0.5 pb-10 flex flex-col justify-start items-start gap-4 relative z-10">
+      <div className="relative z-10 max-w-3xl mx-auto space-y-4">
         {faqData.map((faq, index) => (
-          <FAQItem key={index} {...faq} isOpen={openItems.has(index)} onToggle={() => toggleItem(index)} />
+          <FAQItem 
+            key={index} 
+            {...faq} 
+            isOpen={openItems.has(index)} 
+            onToggle={() => toggleItem(index)} 
+          />
         ))}
       </div>
     </section>
