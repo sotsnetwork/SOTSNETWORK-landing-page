@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 const testimonials = [
   {
@@ -52,7 +53,7 @@ const testimonials = [
   },
 ]
 
-const TestimonialCard = ({ quote, name, company, type }) => {
+const TestimonialCard = ({ quote, name, company, type, index }) => {
   const isLargeCard = type.startsWith("large")
   const padding = isLargeCard ? "p-6" : "p-[30px]"
 
@@ -85,7 +86,21 @@ const TestimonialCard = ({ quote, name, company, type }) => {
   }
 
   return (
-    <div className={`${cardClasses} ${cardHeight} ${cardWidth}`}>
+    <motion.div 
+      className={`${cardClasses} ${cardHeight} ${cardWidth}`}
+      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ 
+        duration: 0.6, 
+        delay: index * 0.1,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }}
+      whileHover={{ 
+        y: -8, 
+        scale: 1.02,
+        transition: { duration: 0.2 }
+      }}
+    >
       <div className="flex flex-col justify-between items-start gap-4 h-full">
         <p className={`${quoteClasses} flex-1`}>{quote}</p>
         <div className="flex flex-col justify-start items-start gap-1">
@@ -93,37 +108,60 @@ const TestimonialCard = ({ quote, name, company, type }) => {
           <p className={companyClasses}>{company}</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
 export function TestimonialGridSection() {
   return (
-    <section className="w-full px-5 overflow-hidden flex flex-col justify-start py-6 md:py-8 lg:py-14">
-      <div className="self-stretch py-6 md:py-8 lg:py-14 flex flex-col justify-center items-center gap-2">
+    <section className="w-full px-5 overflow-hidden flex flex-col justify-start py-6 md:py-8 lg:py-14 relative">
+      {/* Animated background blur */}
+      <motion.div 
+        className="w-[300px] h-[500px] absolute top-[150px] left-1/2 -translate-x-1/2 origin-top-left rotate-[-33.39deg] bg-primary/10 blur-[100px] z-0"
+        animate={{ 
+          y: [0, -15, 0],
+          opacity: [0.2, 0.5, 0.2]
+        }}
+        transition={{ 
+          duration: 6, 
+          repeat: Infinity, 
+          ease: "easeInOut" 
+        }}
+      />
+      <div className="self-stretch py-6 md:py-8 lg:py-14 flex flex-col justify-center items-center gap-2 relative z-10">
         <div className="flex flex-col justify-start items-center gap-4">
-          <h2 className="text-center text-foreground text-3xl md:text-4xl lg:text-[40px] font-semibold leading-tight md:leading-tight lg:leading-[40px]">
+          <motion.h2 
+            className="text-center text-foreground text-3xl md:text-4xl lg:text-[40px] font-semibold leading-tight md:leading-tight lg:leading-[40px]"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             What Our Clients Say
-          </h2>
-          <p className="self-stretch text-center text-muted-foreground text-sm md:text-sm lg:text-base font-medium leading-[18.20px] md:leading-relaxed lg:leading-relaxed">
+          </motion.h2>
+          <motion.p 
+            className="self-stretch text-center text-muted-foreground text-sm md:text-sm lg:text-base font-medium leading-[18.20px] md:leading-relaxed lg:leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             {"Hear from entrepreneurs, business owners, and professionals"} <br />{" "}
             {"who have transformed their ideas into reality with our help"}
-          </p>
+          </motion.p>
         </div>
       </div>
-      <div className="w-full pt-0.5 pb-4 md:pb-6 lg:pb-10 flex flex-col md:flex-row justify-center items-start gap-4 md:gap-4 lg:gap-6 max-w-[1100px] mx-auto">
+      <div className="w-full pt-0.5 pb-4 md:pb-6 lg:pb-10 flex flex-col md:flex-row justify-center items-start gap-4 md:gap-4 lg:gap-6 max-w-[1100px] mx-auto relative z-10">
         <div className="flex-1 flex flex-col justify-start items-start gap-4 md:gap-4 lg:gap-6">
-          <TestimonialCard {...testimonials[0]} />
-          <TestimonialCard {...testimonials[1]} />
+          <TestimonialCard {...testimonials[0]} index={0} />
+          <TestimonialCard {...testimonials[1]} index={1} />
         </div>
         <div className="flex-1 flex flex-col justify-start items-start gap-4 md:gap-4 lg:gap-6">
-          <TestimonialCard {...testimonials[2]} />
-          <TestimonialCard {...testimonials[3]} />
-          <TestimonialCard {...testimonials[4]} />
+          <TestimonialCard {...testimonials[2]} index={2} />
+          <TestimonialCard {...testimonials[3]} index={3} />
+          <TestimonialCard {...testimonials[4]} index={4} />
         </div>
         <div className="flex-1 flex flex-col justify-start items-start gap-4 md:gap-4 lg:gap-6">
-          <TestimonialCard {...testimonials[5]} />
-          <TestimonialCard {...testimonials[6]} />
+          <TestimonialCard {...testimonials[5]} index={5} />
+          <TestimonialCard {...testimonials[6]} index={6} />
         </div>
       </div>
     </section>
