@@ -1,85 +1,125 @@
 "use client"
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Card, CardContent } from "@/components/ui/card"
+import type React from "react"
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "CEO, TechStart Inc.",
-    content: "SOTS NETWORK transformed our online presence with a stunning website that perfectly captures our brand. The team's expertise in both design and development is exceptional.",
-    avatar: "/avatars/sarah.jpg",
-    initials: "SJ",
+    quote: "Working with SOTS NETWORK changed how our team approaches automation. They built an AI workflow that cut response time from hours to minutes. We appreciate their patience in explaining each step.",
+    name: "Martin S.",
+    company: "Operations Manager, Germany",
+    type: "large-teal",
   },
   {
-    name: "Michael Chen",
-    role: "Founder, DataFlow Solutions",
-    content: "Working with SOTS NETWORK was a game-changer for our business. They delivered an AI-powered workflow automation that saved us 20+ hours per week.",
-    avatar: "/avatars/michael.jpg",
-    initials: "MC",
+    quote: "I had no technical background and thought building a SaaS product was impossible. SOTS NETWORK guided me through and I launched my first MVP. I'm grateful they believed I could do it.",
+    name: "Sophia L.",
+    company: "Startup Founder, USA",
+    type: "small-dark",
   },
   {
-    name: "Emily Rodriguez",
-    role: "Marketing Director, GrowthCo",
-    content: "The landing page SOTS NETWORK created for us increased our conversion rate by 35%. Their attention to detail and user experience expertise is outstanding.",
-    avatar: "/avatars/emily.jpg",
-    initials: "ER",
+    quote: "SOTS NETWORK built our company website from scratch. They listened to what we needed and turned it into something our customers enjoy using. It feels like our brand finally has a home online.",
+    name: "Elena R.",
+    company: "Marketing Lead, Spain",
+    type: "small-dark",
   },
   {
-    name: "David Thompson",
-    role: "CTO, Innovation Labs",
-    content: "SOTS NETWORK's MVP development service helped us validate our product idea in record time. Their technical skills and business understanding are top-notch.",
-    avatar: "/avatars/david.jpg",
-    initials: "DT",
+    quote: "We needed an AI solution to improve client engagement. SOTS NETWORK delivered fast and stayed involved until everything ran smoothly. It has improved how we serve our customers every day.",
+    name: "Brian C.",
+    company: "Product Director, USA",
+    type: "small-dark",
   },
   {
-    name: "Lisa Wang",
-    role: "Product Manager, FutureTech",
-    content: "The strategic consultation from SOTS NETWORK guided us through complex technology decisions. Their insights helped us choose the right tech stack for our needs.",
-    avatar: "/avatars/lisa.jpg",
-    initials: "LW",
+    quote: "My portfolio site was old and slow. SOTS NETWORK rebuilt it into something modern and professional. I've since received more job offers and feel proud sharing my link.",
+    name: "David K.",
+    company: "Designer, UK",
+    type: "small-dark",
   },
   {
-    name: "Robert Kim",
-    role: "Operations Manager, ScaleUp",
-    content: "SOTS NETWORK's ongoing support and maintenance services keep our digital infrastructure running smoothly. Their reliability and responsiveness are exceptional.",
-    avatar: "/avatars/robert.jpg",
-    initials: "RK",
+    quote: "SOTS NETWORK helped us turn an idea into a working MVP in weeks. Their support gave us the confidence to pitch investors with something real.",
+    name: "Laura P.",
+    company: "Startup Founder, France",
+    type: "small-dark",
+  },
+  {
+    quote: "Our brand needed AI integration but we didn't know where to start. SOTS NETWORK broke everything down and delivered a solution that saved us money and time. We're thankful for their clarity.",
+    name: "James W.",
+    company: "Business Owner, USA",
+    type: "small-dark",
   },
 ]
 
+const TestimonialCard = ({ quote, name, company, type, index }) => {
+  const isLargeCard = type.startsWith("large")
+  const padding = isLargeCard ? "p-6" : "p-[30px]"
+
+  let cardClasses = `flex flex-col justify-between items-start overflow-hidden rounded-[10px] shadow-[0px_2px_4px_rgba(0,0,0,0.08)] relative ${padding}`
+  let quoteClasses = ""
+  let nameClasses = ""
+  let companyClasses = ""
+  let cardHeight = ""
+  const cardWidth = "w-full md:w-[384px]"
+
+  if (type === "large-teal") {
+    cardClasses += " bg-primary"
+    quoteClasses = "text-primary-foreground text-base font-medium leading-6"
+    nameClasses = "text-primary-foreground text-sm font-semibold leading-5"
+    companyClasses = "text-primary-foreground/80 text-sm font-medium leading-5"
+    cardHeight = "h-[280px]"
+  } else if (type === "large-light") {
+    cardClasses += " bg-white/10 backdrop-blur-sm border border-white/20"
+    quoteClasses = "text-foreground text-base font-medium leading-6"
+    nameClasses = "text-foreground text-sm font-semibold leading-5"
+    companyClasses = "text-muted-foreground text-sm font-medium leading-5"
+    cardHeight = "h-[280px]"
+  } else {
+    cardClasses += " bg-card/50 backdrop-blur-sm border border-border"
+    quoteClasses = "text-foreground text-sm font-medium leading-5"
+    nameClasses = "text-foreground text-sm font-semibold leading-5"
+    companyClasses = "text-muted-foreground text-sm font-medium leading-5"
+    cardHeight = "h-[200px]"
+  }
+
+  return (
+    <div 
+      className={`${cardClasses} ${cardHeight} ${cardWidth}`}
+    >
+      <div className="flex flex-col justify-between items-start gap-4 h-full">
+        <p className={`${quoteClasses} flex-1`}>{quote}</p>
+        <div className="flex flex-col justify-start items-start gap-1">
+          <p className={nameClasses}>{name}</p>
+          <p className={companyClasses}>{company}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function TestimonialGridSection() {
   return (
-    <section className="py-16 md:py-24 bg-muted/50">
-      <div className="container px-4 md:px-6">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+    <section className="w-full px-5 overflow-hidden flex flex-col justify-start py-6 md:py-8 lg:py-14 relative">
+      <div className="self-stretch py-6 md:py-8 lg:py-14 flex flex-col justify-center items-center gap-2 relative z-10">
+        <div className="flex flex-col justify-start items-center gap-4">
+          <h2 className="text-center text-foreground text-3xl md:text-4xl lg:text-[40px] font-semibold leading-tight md:leading-tight lg:leading-[40px]">
             What Our Clients Say
           </h2>
-          <p className="mt-4 text-muted-foreground md:text-xl">
-            Don't just take our word for it. Here's what our clients have to say about working with SOTS NETWORK.
+          <p className="self-stretch text-center text-muted-foreground text-sm md:text-sm lg:text-base font-medium leading-[18.20px] md:leading-relaxed lg:leading-relaxed">
+            {"Hear from entrepreneurs, business owners, and professionals"} <br />{" "}
+            {"who have transformed their ideas into reality with our help"}
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Card key={testimonial.name} className="relative overflow-hidden">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <Avatar className="h-12 w-12">
-                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-                    <AvatarFallback>{testimonial.initials}</AvatarFallback>
-                  </Avatar>
-                  <div className="flex-1">
-                    <h3 className="font-semibold">{testimonial.name}</h3>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </div>
-                <blockquote className="mt-4 text-muted-foreground">
-                  "{testimonial.content}"
-                </blockquote>
-              </CardContent>
-            </Card>
-          ))}
+      </div>
+      <div className="w-full pt-0.5 pb-4 md:pb-6 lg:pb-10 flex flex-col md:flex-row justify-center items-start gap-4 md:gap-4 lg:gap-6 max-w-[1100px] mx-auto relative z-10">
+        <div className="flex-1 flex flex-col justify-start items-start gap-4 md:gap-4 lg:gap-6">
+          <TestimonialCard {...testimonials[0]} index={0} />
+          <TestimonialCard {...testimonials[1]} index={1} />
+        </div>
+        <div className="flex-1 flex flex-col justify-start items-start gap-4 md:gap-4 lg:gap-6">
+          <TestimonialCard {...testimonials[2]} index={2} />
+          <TestimonialCard {...testimonials[3]} index={3} />
+          <TestimonialCard {...testimonials[4]} index={4} />
+        </div>
+        <div className="flex-1 flex flex-col justify-start items-start gap-4 md:gap-4 lg:gap-6">
+          <TestimonialCard {...testimonials[5]} index={5} />
+          <TestimonialCard {...testimonials[6]} index={6} />
         </div>
       </div>
     </section>
