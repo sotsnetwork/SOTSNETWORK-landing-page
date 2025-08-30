@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-import { motion } from "framer-motion"
 
 const RealtimeCodingPreviews: React.FC = () => {
   const themeVars = {
@@ -146,7 +145,7 @@ const RealtimeCodingPreviews: React.FC = () => {
           }}
         >
           {/* Download Button - Exact positioning from Figma */}
-          <motion.div
+          <div
             style={{
               position: "absolute",
               top: "calc(50% + 0.001px)",
@@ -169,17 +168,6 @@ const RealtimeCodingPreviews: React.FC = () => {
                 "0px 52.186px 14.233px rgba(0, 0, 0, 0), 0px 33.209px 12.651px rgba(0, 0, 0, 0.01), 0px 18.977px 11.07px rgba(0, 0, 0, 0.05), 0px 7.907px 7.907px rgba(0, 0, 0, 0.09), 0px 1.581px 4.744px rgba(0, 0, 0, 0.1)",
               boxSizing: "border-box",
             }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            animate={{ 
-              y: [0, -3, 0],
-              scale: [1, 1.02, 1]
-            }}
-            transition={{ 
-              duration: 4, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
           >
             <div
               style={{
@@ -195,7 +183,7 @@ const RealtimeCodingPreviews: React.FC = () => {
             >
               View Demo
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
