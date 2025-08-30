@@ -68,10 +68,10 @@ const EasyDeployment: React.FC = () => {
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>  provider: vercel</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>  environment:</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>    production:</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      url: ${{ secrets.PROD_URL }}</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      url: secrets.PROD_URL</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      branch: main</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>    staging:</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      url: ${{ secrets.STAGING_URL }}</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      url: secrets.STAGING_URL</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      branch: develop</p>
           </div>
         </div>
@@ -123,10 +123,10 @@ const EasyDeployment: React.FC = () => {
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>  provider: vercel</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>  environment:</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>    production:</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      url: ${{ secrets.PROD_URL }}</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      url: secrets.PROD_URL</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      branch: main</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>    staging:</p>
-            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      url: ${{ secrets.STAGING_URL }}</p>
+            <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      url: secrets.STAGING_URL</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}>      branch: develop</p>
           </div>
           <button
