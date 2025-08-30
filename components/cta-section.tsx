@@ -111,14 +111,13 @@ export function CTASection() {
             powerful AI tools
           </p>
         </div>
-        <Link href="https://vercel.com/home" target="_blank" rel="noopener noreferrer">
-          <Button
-            className="px-[30px] py-2 bg-secondary text-secondary-foreground text-base font-medium leading-6 rounded-[99px] shadow-[0px_0px_0px_4px_rgba(255,255,255,0.13)] hover:bg-secondary/90 transition-all duration-200"
-            size="lg"
-          >
-            Signup for free
-          </Button>
-        </Link>
+        <Button
+          onClick={() => window.open('https://calendly.com/sotsnetwork/30min', '_blank')}
+          className="px-[30px] py-2 bg-secondary text-secondary-foreground text-base font-medium leading-6 rounded-[99px] shadow-[0px_0px_0px_4px_rgba(255,255,255,0.13)] hover:bg-secondary/90 transition-all duration-200"
+          size="lg"
+        >
+          Get Started
+        </Button>
       </div>
     </section>
   )
