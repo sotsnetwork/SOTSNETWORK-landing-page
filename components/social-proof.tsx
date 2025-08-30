@@ -10,7 +10,7 @@ export function SocialProof() {
       {/* SOTS NETWORK Logo - Prominently displayed */}
       <div className="flex justify-center items-center mb-8">
         <Image
-          src="/real logo.svg"
+          src="/the real logo.png"
           alt="SOTS NETWORK Logo"
           width={120}
           height={132}
