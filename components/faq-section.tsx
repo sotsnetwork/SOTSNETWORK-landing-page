@@ -6,34 +6,34 @@ import { ChevronDown } from "lucide-react"
 
 const faqData = [
   {
-    question: "What is Pointer and who is it for?",
+    question: "What services does SOTS NETWORK provide?",
     answer:
-      "Pointer is an AI-powered development platform designed for developers, teams, and organizations who want toaccelerate their coding workflow. It's perfect for both individual developers looking to enhance their productivity and teams seeking seamless collaboration tools.",
+      "SOTS NETWORK specializes in AI & Agentic Solutions for creators and businesses. We offer website and landing page development, MVP creation, AI workflow automation, and strategic consultation. Our services are designed to help businesses integrate AI into their existing workflows and Web3.0 projects.",
   },
   {
-    question: "How does Pointer's AI code review work?",
+    question: "How does your AI integration process work?",
     answer:
-      "Our AI analyzes your code in real-time, providing intelligent suggestions for improvements, catching potential bugs, and ensuring best practices. It learns from your coding patterns and adapts to your team's standards, making code reviews faster and more consistent.",
+      "We start with a consultation to understand your current workflow and business needs. Then we design and implement AI solutions that integrate seamlessly with your existing tools and processes. We provide ongoing support until everything runs smoothly and you're comfortable with the new system.",
   },
   {
-    question: "Can I integrate Pointer with my existing tools?",
+    question: "What's included in the Free Inquiries consultation?",
     answer:
-      "Yes! Pointer offers one-click integrations with popular development tools including GitHub, GitLab, VS Code, Slack, and many more. Our MCP connectivity allows you to easily manage and configure server access across your entire development stack.",
+      "Our free consultation includes an initial call to discuss your project requirements, analysis of your current workflow, solution recommendations, and expert guidance on the best approach for your business. There's no commitment required - it's our way of helping you understand how AI can benefit your specific situation.",
   },
   {
-    question: "What's included in the free plan?",
+    question: "How long does it take to develop a website or MVP?",
     answer:
-      "The free plan includes real-time code suggestions, basic integrations, single MCP server connection, up to 2 AI coding agents, and Vercel deployments with Pointer branding. It's perfect for individual developers getting started.",
+      "Timelines vary based on project complexity. A professional website typically takes 2-4 weeks, while an MVP can take 4-8 weeks depending on features. We work closely with you throughout the process and provide regular updates. For urgent projects, we can expedite development with additional resources.",
   },
   {
-    question: "How do parallel coding agents work?",
+    question: "Do you provide ongoing support after project completion?",
     answer:
-      "Our parallel coding agents can work on different parts of your codebase simultaneously, solving complex problems faster than traditional single-threaded approaches. You can launch multiple agents to handle different tasks like bug fixes, feature development, and code optimization concurrently.",
+      "Yes, we offer ongoing support for all our projects. This includes technical maintenance, updates, troubleshooting, and guidance on scaling your solution. We believe in building long-term relationships with our clients and ensuring your investment continues to deliver value.",
   },
   {
-    question: "Is my code secure with Pointer?",
+    question: "Can you work with businesses that have no technical background?",
     answer:
-      "Absolutely. We use enterprise-grade security measures including end-to-end encryption, secure data transmission, and compliance with industry standards. Your code never leaves your secure environment without your explicit permission, and we offer on-premises deployment options for enterprise customers.",
+      "Absolutely! Many of our most successful clients started with no technical knowledge. We specialize in explaining complex technical concepts in simple terms and guiding you through every step of the process. Our goal is to empower you with understanding, not just deliver a finished product.",
   },
 ]
 
@@ -99,7 +99,7 @@ export function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="self-stretch text-center text-muted-foreground text-sm font-medium leading-[18.20px] break-words">
-            Everything you need to know about Pointer and how it can transform your development workflow
+            Everything you need to know about SOTS NETWORK and how we can transform your business with AI solutions
           </p>
         </div>
       </div>
