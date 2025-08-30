@@ -1,4 +1,5 @@
 import type React from "react"
+import { motion } from "framer-motion"
 
 const AiCodeReviews: React.FC = () => {
   const themeVars = {
@@ -183,7 +184,7 @@ const AiCodeReviews: React.FC = () => {
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}> /&gt;</p>
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}> &lt;/svg&gt;</p>
           </div>
-          <button
+          <motion.button
             style={{
               position: "absolute",
               top: "calc(50% + 29.745px)",
@@ -207,7 +208,18 @@ const AiCodeReviews: React.FC = () => {
               lineHeight: "15.814px",
               letterSpacing: "-0.3163px",
               boxShadow:
-                "0px 26.093px 7.116px rgba(0, 0, 0, 0), 0px 16.605px 6.326px rgba(0, 0, 0, 0.01), 0px 9.488px 5.535px rgba(0, 0, 0, 0.05), 0px 3.953px 3.953px rgba(0, 0, 0, 0.09), 0px 0.791px 2.372px rgba(0, 0, 0, 0.1)",
+                "0px 26.093px 7.116px rgba(0, 0, 0, 0), 0px 16.605px 6.326px rgba(0, 0, 0, 0.01), 0px 9.488px 5.535px rgba(0, 0, 0, 0.05), 0px 3.953px 3.953px rgba(0,0, 0, 0.09), 0px 0.791px 2.372px rgba(0, 0, 0, 0.1)",
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            animate={{ 
+              y: [0, -2, 0],
+              opacity: [0.8, 1, 0.8]
+            }}
+            transition={{ 
+              duration: 3, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
             }}
           >
             <span
