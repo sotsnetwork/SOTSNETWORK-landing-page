@@ -1,180 +1,65 @@
+"use client"
+
 import type React from "react"
-import { Search } from "lucide-react"
-import { motion } from "framer-motion"
 
-interface McpConnectivityIllustrationProps {
-  className?: string
-}
+const MCPConnectivityIllustration: React.FC = () => {
+  const themeVars = {
+    "--mcp-primary-color": "hsl(var(--primary))",
+    "--mcp-background-color": "hsl(var(--background))",
+    "--mcp-text-color": "hsl(var(--foreground))",
+    "--mcp-border-color": "hsl(var(--border))",
+  }
 
-const McpConnectivityIllustration: React.FC<McpConnectivityIllustrationProps> = ({ className = "" }) => {
-  // Integration data with new SVG paths
   const integrations = [
-    { name: "Figma", icon: "/images/mcp-integrations/figma.svg", installed: true },
-    { name: "Shadcn UI", icon: "/images/mcp-integrations/shadcn.svg" },
-    { name: "Next.js", icon: "/images/mcp-integrations/nextjs.svg", installed: true },
-    { name: "Tailwind CSS", icon: "/images/mcp-integrations/tailwind-css.svg" },
-    { name: "Resend", icon: "/images/mcp-integrations/resend.svg", installed: true },
-    { name: "React", icon: "/images/mcp-integrations/react.svg" },
+    "GitHub", "Slack", "Notion", "Figma", "Linear", "Discord"
   ]
 
   return (
     <div
-      className={`w-full h-full flex items-center justify-center p-4 relative ${className}`}
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "relative",
+        background: "transparent",
+        ...themeVars,
+      } as React.CSSProperties}
       role="img"
-      aria-label="MCP Connectivity component showcasing installed integrations list"
+      aria-label="MCP connectivity illustration showing integration connections"
     >
-      {/* Main Message Box */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, calc(-50% + 24px))",
-          width: "345px",
-          height: "277px",
-          background: "linear-gradient(180deg, hsl(var(--background)) 0%, transparent 100%)",
-          backdropFilter: "blur(16px)",
-          borderRadius: "9.628px",
-          border: "0.802px solid hsl(var(--border))",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            width: "100%",
-          }}
-        >
-          {/* Search Header */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "12.837px",
-              padding: "8.826px 12.837px",
-              borderBottom: "0.802px solid hsl(var(--border))",
-              width: "100%",
-              boxSizing: "border-box",
-            }}
-          >
-            <div
-              style={{
-                width: "14.442px",
-                height: "14.442px",
-                position: "relative",
-                flexShrink: 0,
-              }}
-            >
-              <Search className="w-full h-full text-muted-foreground" />
-            </div>
-            <span
-              style={{
-                fontFamily: "'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                fontSize: "12.837px",
-                lineHeight: "19.256px",
-                color: "hsl(var(--muted-foreground))",
-                fontWeight: 400,
-                whiteSpace: "nowrap",
-              }}
-            >
-              Search for services
-            </span>
+      {/* Search Bar */}
+      <div className="p-6">
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search for services..."
+            className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground"
+          />
+          <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+            <span className="text-muted-foreground">🔍</span>
           </div>
-          {/* Integration List */}
+        </div>
+      </div>
+
+      {/* Integration List */}
+      <div className="px-6">
+        <div className="space-y-2">
           {integrations.map((integration, index) => (
-            <motion.div
-              key={integration.name}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                padding: "8.826px 12.837px",
-                borderBottom: index < integrations.length - 1 ? "0.479px solid hsl(var(--border))" : "none",
-                width: "100%",
-                boxSizing: "border-box",
-              }}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ 
-                duration: 0.4, 
-                delay: index * 0.1,
-                ease: [0.25, 0.46, 0.45, 0.94]
-              }}
-              whileHover={{ 
-                x: 5,
-                transition: { duration: 0.2 }
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "12.837px",
-                }}
-              >
-                <div
-                  style={{
-                    width: "24px",
-                    height: "24px",
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                  }}
-                >
-                  <img
-                    src={integration.icon || "/placeholder.svg"}
-                    alt={integration.name}
-                    className="w-full h-full object-contain opacity-70 grayscale"
-                  />
-                </div>
-                <span
-                  style={{
-                    fontFamily: "'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                    fontSize: "12.837px",
-                    lineHeight: "19.256px",
-                    color: "hsl(var(--muted-foreground))",
-                    fontWeight: 400,
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {integration.name}
-                </span>
-              </div>
-              {integration.installed && (
-                <div
-                  style={{
-                    background: "hsl(var(--primary) / 0.08)",
-                    padding: "1.318px 5.272px",
-                    borderRadius: "3.295px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                      fontSize: "9.583px",
-                      lineHeight: "15.333px",
-                      color: "hsl(var(--primary))",
-                      fontWeight: 500,
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    Installed
-                  </span>
-                </div>
-              )}
-            </motion.div>
+            <div key={index} className="flex items-center justify-between p-3 bg-card border border-border rounded-lg">
+              <span className="text-sm font-medium">{integration}</span>
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
           ))}
+        </div>
+      </div>
+
+      {/* Connection Status */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+        <div className="bg-green-500 text-white px-3 py-1 rounded-full text-sm">
+          {integrations.length} Services Connected
         </div>
       </div>
     </div>
   )
 }
 
-export default McpConnectivityIllustration
+export default MCPConnectivityIllustration
