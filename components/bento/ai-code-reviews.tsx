@@ -15,15 +15,13 @@ const AiCodeReviews: React.FC = () => {
 
   return (
     <div
-      style={
-        {
-          width: "100%",
-          height: "100%",
-          position: "relative",
-          background: "transparent",
-          ...themeVars,
-        } as React.CSSProperties
-      }
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "relative",
+        background: "transparent",
+        ...themeVars,
+      } as React.CSSProperties}
       role="img"
       aria-label="AI Code Reviews interface showing code suggestions with apply buttons"
     >
