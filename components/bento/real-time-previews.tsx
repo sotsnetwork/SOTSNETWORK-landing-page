@@ -184,7 +184,7 @@ const RealtimeCodingPreviews: React.FC = () => {
                 whiteSpace: "pre",
               }}
             >
-              Download for macOS
+              View Demo
             </div>
           </div>
         </div>
