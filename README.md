@@ -1,14 +1,15 @@
-# Pointer AI landing page
+# SOTS NETWORK Landing Page
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+*Professional Web Development & AI Solutions for Modern Businesses*
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/sots-network-projects/v0-pointer-ai-landing-page)
 [![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/BVnA3sPsKKo)
 
 ## Overview
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+SOTS NETWORK specializes in AI & Web Solutions for creators and businesses. We offer website and landing page development, MVP creation, AI workflow automation, and strategic consultation. Our services are designed to help businesses integrate AI into their existing workflows and Web3.0 projects.
+
+This repository contains the landing page for SOTS NETWORK services.
 
 ## Deployment
 
