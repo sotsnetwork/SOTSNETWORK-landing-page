@@ -6,8 +6,6 @@ import { PricingSection } from "@/components/pricing-section"
 import { TestimonialGridSection } from "@/components/testimonial-grid-section"
 import { FAQSection } from "@/components/faq-section"
 import { FooterSection } from "@/components/footer-section"
-import { AnimatedSection } from "@/components/animated-section"
-import { ClientOnly } from "@/components/client-only"
 
 export default function LandingPage() {
   return (
@@ -17,51 +15,33 @@ export default function LandingPage() {
           <HeroSection />
           {/* Dashboard Preview Wrapper */}
           <div className="absolute bottom-[-150px] md:bottom-[-400px] left-1/2 transform -translate-x-1/2 z-30">
-            <ClientOnly>
-              <AnimatedSection>
-                <DashboardPreview />
-              </AnimatedSection>
-            </ClientOnly>
+            <DashboardPreview />
           </div>
         </main>
-        <ClientOnly>
-          <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 mt-[411px] md:mt-[400px]" delay={0.1}>
-            <SocialProof />
-          </AnimatedSection>
-        </ClientOnly>
-        <ClientOnly>
-          <AnimatedSection id="features-section" className="relative z-10 max-w-[1320px] mx-auto mt-16" delay={0.2}>
-            <BentoSection />
-          </AnimatedSection>
-        </ClientOnly>
-        <ClientOnly>
-          <AnimatedSection
-            id="pricing-section"
-            className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16"
-            delay={0.2}
-          >
-            <PricingSection />
-          </AnimatedSection>
-        </ClientOnly>
-        <ClientOnly>
-          <AnimatedSection
-            id="testimonials-section"
-            className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16"
-            delay={0.2}
-          >
-            <TestimonialGridSection />
-          </AnimatedSection>
-        </ClientOnly>
-        <ClientOnly>
-          <AnimatedSection id="faq-section" className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16" delay={0.2}>
-            <FAQSection />
-          </AnimatedSection>
-        </ClientOnly>
-        <ClientOnly>
-          <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16" delay={0.2}>
-            <FooterSection />
-          </AnimatedSection>
-        </ClientOnly>
+        <div className="relative z-10 max-w-[1320px] mx-auto px-6 mt-[411px] md:mt-[400px]">
+          <SocialProof />
+        </div>
+        <div id="features-section" className="relative z-10 max-w-[1320px] mx-auto mt-16">
+          <BentoSection />
+        </div>
+        <div
+          id="pricing-section"
+          className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16"
+        >
+          <PricingSection />
+        </div>
+        <div
+          id="testimonials-section"
+          className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16"
+        >
+          <TestimonialGridSection />
+        </div>
+        <div id="faq-section" className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16">
+          <FAQSection />
+        </div>
+        <div className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16">
+          <FooterSection />
+        </div>
       </div>
     </div>
   )
