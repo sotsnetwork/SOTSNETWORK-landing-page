@@ -2,8 +2,8 @@ import { HeroSection } from "@/components/hero-section"
 import { DashboardPreview } from "@/components/dashboard-preview"
 import { SocialProof } from "@/components/social-proof"
 import { BentoSection } from "@/components/bento-section"
-import { PricingSection } from "@/components/pricing-section"
 import { TestimonialGridSection } from "@/components/testimonial-grid-section"
+import { PricingSection } from "@/components/pricing-section"
 import { FAQSection } from "@/components/faq-section"
 import { FooterSection } from "@/components/footer-section"
 
@@ -25,16 +25,16 @@ export default function LandingPage() {
           <BentoSection />
         </div>
         <div
-          id="pricing-section"
-          className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16"
-        >
-          <PricingSection />
-        </div>
-        <div
           id="testimonials-section"
           className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16"
         >
           <TestimonialGridSection />
+        </div>
+        <div
+          id="pricing-section"
+          className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16"
+        >
+          <PricingSection />
         </div>
         <div id="faq-section" className="relative z-10 max-w-[1320px] mx-auto mt-8 md:mt-16">
           <FAQSection />
