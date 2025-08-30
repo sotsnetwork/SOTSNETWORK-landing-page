@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: 'SOTS NETWORK - Professional Web Development & AI Solutions',
   description: 'SOTS NETWORK specializes in AI & Web Solutions for creators and businesses. We offer website and landing page development, MVP creation, AI workflow automation, and strategic consultation.',
   generator: 'SOTS NETWORK',
+  icons: {
+    icon: '/the real logo.png',
+    shortcut: '/the real logo.png',
+    apple: '/the real logo.png',
+  },
 }
 
 export default function RootLayout({
