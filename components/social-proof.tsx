@@ -7,17 +7,6 @@ export function SocialProof() {
         Trusted by businesses worldwide
       </div>
       
-      {/* SOTS NETWORK Logo - Prominently displayed */}
-      <div className="flex justify-center items-center mb-8">
-        <Image
-          src="/the real logo.png"
-          alt="SOTS NETWORK Logo"
-          width={120}
-          height={132}
-          className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
-        />
-      </div>
-      
       {/* Startup Logos Grid */}
       <div className="self-stretch grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
         {Array.from({ length: 8 }).map((_, i) => (
