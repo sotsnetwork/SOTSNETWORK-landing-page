@@ -216,7 +216,7 @@ const AiCodeReviews: React.FC = () => {
                 fontWeight: 500,
               }}
             >
-              Apply changes
+              Get Started
             </span>
             <span
               style={{
