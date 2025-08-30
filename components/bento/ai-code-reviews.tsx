@@ -162,6 +162,7 @@ const AiCodeReviews: React.FC = () => {
             <p style={{ margin: 0, whiteSpace: "pre-wrap", fontWeight: 400 }}> &lt;/svg&gt;</p>
           </div>
           <button
+            onClick={() => window.open('https://calendly.com/sotsnetwork/30min', '_blank')}
             style={{
               position: "absolute",
               top: "calc(50% + 29.745px)",
