@@ -73,7 +73,7 @@ const OneClickIntegrationsIllustration: React.FC = () => {
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <div className="bg-green-500 text-white px-3 py-1 rounded-full text-sm">
           Connected
-        </div>
+          </div>
       </div>
     </div>
   )
