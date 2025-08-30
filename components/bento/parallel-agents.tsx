@@ -1,270 +1,65 @@
+"use client"
+
 import type React from "react"
-import { motion } from "framer-motion"
 
-interface ParallelCodingAgentsProps {
-  className?: string
-}
-
-const ParallelCodingAgents: React.FC<ParallelCodingAgentsProps> = ({ className = "" }) => {
-  // Theme-based CSS variables using global theme
+const ParallelAgents: React.FC = () => {
   const themeVars = {
-    "--pca-background-color": "hsl(var(--background))",
-    "--pca-background-glass": "hsl(var(--card) / 0.2)",
-    "--pca-background-gradient-start": "hsl(var(--card) / 0.2)",
-    "--pca-background-gradient-end": "transparent",
-    "--pca-text-primary": "hsl(var(--foreground))",
-    "--pca-text-secondary": "hsl(var(--muted-foreground))",
-    "--pca-border-color": "hsl(var(--border))",
-    "--pca-border-main": "hsl(var(--border))",
-    "--pca-shadow-color": "rgba(0, 0, 0, 0.12)",
-    "--pca-container-background": "hsl(var(--card) / 0.4)",
-    "--pca-container-gradient-start": "hsl(var(--card) / 0.4)",
-    "--pca-container-gradient-end": "transparent",
+    "--agents-primary-color": "hsl(var(--primary))",
+    "--agents-background-color": "hsl(var(--background))",
+    "--agents-text-color": "hsl(var(--foreground))",
+    "--agents-border-color": "hsl(var(--border))",
   }
 
-  const CheckmarkIcon = () => (
-    <svg
-      width="13.885"
-      height="13.885"
-      viewBox="0 0 14 14"
-      fill="none"
-      style={{ width: "13.885px", height: "13.885px" }}
-    >
-      <path
-        d="M3.85156 7.875L6.47656 10.5L10.8516 3.5"
-        stroke="var(--pca-text-primary)"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        opacity="0.8"
-      />
-    </svg>
-  )
-
-  const RefreshIcon = () => (
-    <svg
-      width="13.885"
-      height="13.885"
-      viewBox="0 0 14 14"
-      fill="none"
-      style={{ width: "13.885px", height: "13.885px" }}
-    >
-      <path
-        d="M1.75 7C1.75 4.1005 4.1005 1.75 7 1.75C9.8995 1.75 12.25 4.1005 12.25 7C12.25 9.8995 9.8995 12.25 7 12.25"
-        stroke="var(--pca-text-primary)"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        opacity="0.8"
-      />
-      <path
-        d="M4.375 10.5L1.75 12.25L3.5 9.625"
-        stroke="var(--pca-text-primary)"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        opacity="0.8"
-      />
-    </svg>
-  )
-
-  const SparklesIcon = () => (
-    <svg
-      width="13.885"
-      height="13.885"
-      viewBox="0 0 14 14"
-      fill="none"
-      style={{ width: "13.885px", height: "13.885px" }}
-    >
-      <path
-        d="M7 1.75L8.225 5.775L12.25 7L8.225 8.225L7 12.25L5.775 8.225L1.75 7L5.775 5.775L7 1.75Z"
-        stroke="var(--pca-text-primary)"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        opacity="0.8"
-      />
-    </svg>
-  )
-
   const agents = [
-    {
-      icon: <CheckmarkIcon />,
-      title: "Website Design",
-      tokens: "12k tokens",
-      model: "o3",
-      branch: "sots/web-design...",
-    },
-    {
-      icon: <RefreshIcon />,
-      title: "AI Integration",
-      tokens: "12k tokens",
-      model: "claude-sonnet-4",
-      branch: "sots/ai-solutions...",
-    },
-    {
-      icon: <SparklesIcon />,
-      title: "MVP Development",
-      tokens: "30k tokens",
-      model: "o3",
-      branch: "sots/mvp-build...",
-    },
+    { id: 1, name: "Website Design", status: "Active", progress: 75 },
+    { id: 2, name: "AI Integration", status: "Active", progress: 60 },
+    { id: 3, name: "Testing", status: "Pending", progress: 0 },
+    { id: 4, name: "Deployment", status: "Pending", progress: 0 },
   ]
 
   return (
     <div
-      className={className}
       style={{
         width: "100%",
         height: "100%",
         position: "relative",
-        background: `linear-gradient(180deg, var(--pca-container-gradient-start) 0%, var(--pca-container-gradient-end) 100%)`,
-        backdropFilter: "blur(8.372px)",
-        borderRadius: "10.047px",
-        boxSizing: "border-box",
-        flexShrink: 0,
-        margin: "0 auto",
+        background: "transparent",
         ...themeVars,
       } as React.CSSProperties}
       role="img"
-      aria-label="Parallel coding agents working on different tasks simultaneously"
+      aria-label="Parallel agents interface showing multiple AI agents working simultaneously"
     >
-      {/* Inner content area with gradient background */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "flex-start",
-          gap: "16px",
-          padding: "20px",
-          height: "100%",
-          width: "calc(100% - 48px)",
-          background: "linear-gradient(180deg, hsl(var(--primary) / 0.05) 0%, transparent 100%)",
-          backdropFilter: "blur(16px)",
-          borderRadius: "9.628px",
-          border: "0.802px solid hsl(var(--border))",
-          overflow: "hidden",
-          boxSizing: "border-box",
-          margin: "24px 24px 0 24px",
-        }}
-      >
-        {agents.map((agent, index) => (
-          <motion.div
-            key={index}
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "flex-start",
-              gap: "8.658px",
-              padding: "6.494px 8.658px",
-              background: `linear-gradient(180deg, var(--pca-background-gradient-start) 0%, var(--pca-background-gradient-end) 100%)`,
-              backdropFilter: "blur(19.481px)",
-              borderRadius: "8.658px",
-              boxShadow: `0px 1.082px 2.165px 0px var(--pca-shadow-color)`,
-              border: "0.541px solid var(--pca-border-color)",
-              width: "100%",
-              maxWidth: "320px",
-              flexShrink: 0,
-              position: "relative",
-              overflow: "hidden",
-              boxSizing: "border-box",
-            }}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ 
-              duration: 0.5, 
-              delay: index * 0.2,
-              ease: [0.25, 0.46, 0.45, 0.94]
-            }}
-            whileHover={{ 
-              scale: 1.02,
-              x: 5,
-              transition: { duration: 0.2 }
-            }}
-          >
-            {/* Icon container */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                gap: "8.658px",
-                padding: "3.247px 0 0 0",
-                flexShrink: 0,
-              }}
-            >
-              <div
-                style={{
-                  width: "17.316px",
-                  height: "17.316px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  overflow: "hidden",
-                  flexShrink: 0,
-                }}
-              >
-                {agent.icon}
-              </div>
+      {/* Agents Grid */}
+      <div className="grid grid-cols-2 gap-4 p-6">
+        {agents.map((agent) => (
+          <div key={agent.id} className="bg-card border border-border rounded-lg p-4">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-sm font-medium">{agent.name}</h3>
+              <span className={`text-xs px-2 py-1 rounded-full ${
+                agent.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
+              }`}>
+                {agent.status}
+              </span>
             </div>
-            {/* Content container */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-                justifyContent: "center",
-                gap: "2.164px",
-                padding: "0",
-                flexShrink: 0,
-                ...(index === 1
-                  ? {
-                      flexBasis: 0,
-                      flexGrow: 1,
-                      minHeight: "1px",
-                      minWidth: "1px",
-                    }
-                  : {}),
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "10.823px",
-                  lineHeight: "17.316px",
-                  color: "var(--pca-text-primary)",
-                  whiteSpace: "pre",
-                  flexShrink: 0,
-                }}
-              >
-                {agent.title}
-              </div>
-              <div
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "10.823px",
-                  lineHeight: "17.316px",
-                  color: "var(--pca-text-secondary)",
-                  whiteSpace: index === 1 ? "nowrap" : "pre",
-                  overflow: index === 1 ? "hidden" : "visible",
-                  textOverflow: index === 1 ? "ellipsis" : "clip",
-                  width: index === 1 ? "100%" : "auto",
-                  minWidth: index === 1 ? "100%" : "auto",
-                  flexShrink: 0,
-                }}
-              >
-                {`${agent.tokens} • ${agent.model} • ${agent.branch}`}
-              </div>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div 
+                className="bg-primary h-2 rounded-full transition-all duration-300"
+                style={{ width: `${agent.progress}%` }}
+              ></div>
             </div>
-          </motion.div>
+            <p className="text-xs text-muted-foreground mt-2">{agent.progress}% complete</p>
+          </div>
         ))}
+      </div>
+
+      {/* Status Indicator */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+        <div className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+          {agents.filter(a => a.status === 'Active').length} Agents Running
+        </div>
       </div>
     </div>
   )
 }
 
-export default ParallelCodingAgents
+export default ParallelAgents
