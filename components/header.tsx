@@ -39,7 +39,7 @@ export function Header() {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-3">
             <Image
-              src="/real logo.svg"
+              src="/the real logo.png"
               alt="SOTS NETWORK Logo"
               width={40}
               height={44}
