@@ -73,7 +73,7 @@ export function FooterSection() {
           <a href="#" className="text-muted-foreground text-sm font-medium leading-5 hover:text-foreground transition-colors">
             Blog
           </a>
-          <a href="#" className="text-muted-foreground text-sm font-medium leading-5 hover:text-foreground transition-colors">
+          <a href="https://lu.ma/ifa2vwv1" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm font-medium leading-5 hover:text-foreground transition-colors">
             Events
           </a>
         </div>
