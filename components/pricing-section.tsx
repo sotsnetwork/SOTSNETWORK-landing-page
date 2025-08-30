@@ -18,7 +18,7 @@ export function PricingSection() {
       ],
       buttonText: "Get Started",
       buttonClass:
-        "bg-zinc-300 shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] outline outline-0.5 outline-[#1e29391f] outline-offset-[-0.5px] text-gray-800 text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-zinc-400",
+        "bg-white text-gray-900 shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] outline outline-0.5 outline-[#1e29391f] outline-offset-[-0.5px] text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-gray-100 font-semibold",
     },
     {
       name: "Website & Landing Page",
@@ -35,7 +35,7 @@ export function PricingSection() {
       ],
       buttonText: "Get Quote",
       buttonClass:
-        "bg-primary shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] text-primary-foreground text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-primary/90",
+        "bg-primary shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] text-primary-foreground text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-primary/90 font-semibold",
       popular: true,
     },
     {
@@ -53,7 +53,7 @@ export function PricingSection() {
       ],
       buttonText: "Get Quote",
       buttonClass:
-        "bg-secondary shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] text-secondary-foreground text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-secondary/90",
+        "bg-white text-gray-900 shadow-[0px_1px_1px_-0.5px_rgba(16,24,40,0.20)] text-shadow-[0px_1px_1px_rgba(16,24,40,0.08)] hover:bg-gray-100 font-semibold",
     },
   ]
 
