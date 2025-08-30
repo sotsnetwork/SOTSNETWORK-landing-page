@@ -439,15 +439,6 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 space-y-4 md:space-y-5 lg:space-y-6 mb-6 md:mb-7 lg:mb-9 max-w-md md:max-w-[500px] lg:max-w-[588px] mt-16 md:mt-[120px] lg:mt-[160px] px-4">
-        <div className="flex justify-center mb-4">
-          <Image
-            src="/real logo.svg"
-            alt="SOTS NETWORK Logo"
-            width={120}
-            height={132}
-            className="h-32 w-auto"
-          />
-        </div>
         <h1 className="text-center text-foreground text-5xl md:text-6xl lg:text-7xl font-bold leading-tight md:leading-tight lg:leading-tight">
           SOTS NETWORK
         </h1>
