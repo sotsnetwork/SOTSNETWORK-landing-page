@@ -100,7 +100,10 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <Button className={`w-full ${service.buttonClass}`}>
+              <Button 
+                className={`w-full ${service.buttonClass}`}
+                onClick={() => window.open('https://calendly.com/sotsnetwork/30min', '_blank')}
+              >
                 {service.buttonText}
               </Button>
             </div>
