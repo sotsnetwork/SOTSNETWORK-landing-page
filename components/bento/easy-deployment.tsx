@@ -1,4 +1,5 @@
 import type React from "react"
+import { motion } from "framer-motion"
 
 interface DeploymentEasyProps {
   /** Width of component – number (px) or any CSS size value */
@@ -123,7 +124,7 @@ const DeploymentEasy: React.FC<DeploymentEasyProps> = ({ width = "100%", height 
       {/* -------------------------------------------------------- */}
       {/* Call-to-action button                                   */}
       {/* -------------------------------------------------------- */}
-      <button
+      <motion.button
         style={{
           position: "absolute",
           top: "calc(50% + 57.6px)",
@@ -148,9 +149,20 @@ const DeploymentEasy: React.FC<DeploymentEasyProps> = ({ width = "100%", height 
           boxShadow:
             "0px 42.075px 11.475px rgba(0, 0, 0, 0), 0px 26.775px 10.2px rgba(0, 0, 0, 0.01), 0px 15.3px 8.925px rgba(0, 0, 0, 0.05), 0px 6.375px 6.375px rgba(0, 0, 0, 0.09), 0px 1.275px 3.825px rgba(0, 0, 0, 0.1)",
         }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        animate={{ 
+          y: [0, -2, 0],
+          scale: [1, 1.01, 1]
+        }}
+        transition={{ 
+          duration: 3, 
+          repeat: Infinity, 
+          ease: "easeInOut" 
+        }}
       >
         🚀 Get Support
-      </button>
+      </motion.button>
     </div>
   )
 }
