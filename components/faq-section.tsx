@@ -8,7 +8,7 @@ const faqData = [
   {
     question: "What services does SOTS NETWORK provide?",
     answer:
-      "SOTS NETWORK specializes in AI & Agentic Solutions for creators and businesses. We offer website and landing page development, MVP creation, AI workflow automation, and strategic consultation. Our services are designed to help businesses integrate AI into their existing workflows and Web3.0 projects.",
+      "SOTS NETWORK specializes in AI & Web Solutions for creators and businesses. We offer website and landing page development, MVP creation, AI workflow automation, and strategic consultation. Our services are designed to help businesses integrate AI into their existing workflows and Web3.0 projects.",
   },
   {
     question: "How does your AI integration process work?",
