@@ -50,16 +50,16 @@ const FAQItem = ({ question, answer, isOpen, onToggle }: {
 
   return (
     <div
-      className="w-full bg-gray-800 border border-gray-600 rounded-lg overflow-hidden cursor-pointer hover:bg-gray-700 transition-colors"
+      className="w-full bg-card border border-border rounded-lg overflow-hidden cursor-pointer hover:bg-accent/50 transition-colors"
       onClick={handleClick}
     >
       <div className="w-full px-6 py-4 flex justify-between items-center">
-        <div className="flex-1 text-white text-base font-medium pr-4">
+        <div className="flex-1 text-foreground text-base font-medium pr-4">
           {question}
         </div>
         <div className="flex-shrink-0">
           <ChevronDown
-            className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
+            className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${
               isOpen ? "rotate-180" : "rotate-0"
             }`}
           />
@@ -67,8 +67,8 @@ const FAQItem = ({ question, answer, isOpen, onToggle }: {
       </div>
       
       {isOpen && (
-        <div className="px-6 pb-4 border-t border-gray-600">
-          <div className="text-gray-300 text-sm leading-relaxed pt-4">
+        <div className="px-6 pb-4 border-t border-border">
+          <div className="text-muted-foreground text-sm leading-relaxed pt-4">
             {answer}
           </div>
         </div>
@@ -94,14 +94,14 @@ export function FAQSection() {
   return (
     <section className="w-full py-20 px-6 relative">
       {/* Background blur effect */}
-      <div className="w-[300px] h-[500px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 origin-center rotate-[-33.39deg] bg-blue-500/10 blur-[100px] z-0" />
+      <div className="w-[300px] h-[500px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 origin-center rotate-[-33.39deg] bg-primary/10 blur-[100px] z-0" />
       
       {/* Header section */}
       <div className="relative z-10 text-center mb-12">
-        <h2 className="text-4xl font-semibold text-white mb-4">
+        <h2 className="text-4xl font-semibold text-foreground mb-4">
           FAQs
         </h2>
-        <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
           Everything you need to know about SOTS NETWORK and how we can transform your business with AI solutions
         </p>
       </div>
@@ -120,7 +120,7 @@ export function FAQSection() {
       </div>
       
       {/* Debug info - remove this after testing */}
-      <div className="relative z-10 mt-8 text-center text-sm text-gray-500">
+      <div className="relative z-10 mt-8 text-center text-sm text-muted-foreground">
         Debug: {openItems.length} items open
       </div>
     </section>
