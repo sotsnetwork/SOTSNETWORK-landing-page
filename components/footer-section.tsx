@@ -83,7 +83,7 @@ export function FooterSection() {
             <a href="#" className="text-muted-foreground text-sm font-normal leading-6 hover:text-foreground transition-colors">
               Documentation
             </a>
-            <a href="#" className="text-muted-foreground text-sm font-normal leading-6 hover:text-foreground transition-colors">
+            <a href="https://calendly.com/sotsnetwork/30min" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm font-normal leading-6 hover:text-foreground transition-colors">
               Help Center
             </a>
             <a href="https://discord.gg/STySgkqmbx" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm font-normal leading-6 hover:text-foreground transition-colors">
