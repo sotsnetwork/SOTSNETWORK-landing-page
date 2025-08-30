@@ -4,9 +4,24 @@ import OneClickIntegrationsIllustration from "./bento/one-click-integrations-ill
 import MCPConnectivityIllustration from "./bento/mcp-connectivity-illustration" // Updated import
 import EasyDeployment from "./bento/easy-deployment"
 import ParallelCodingAgents from "./bento/parallel-agents" // Updated import
+import { motion } from "framer-motion"
 
-const BentoCard = ({ title, description, Component }) => (
-  <div className="overflow-hidden rounded-2xl border border-white/20 flex flex-col justify-start items-start relative">
+const BentoCard = ({ title, description, Component, index }) => (
+  <motion.div 
+    className="overflow-hidden rounded-2xl border border-white/20 flex flex-col justify-start items-start relative"
+    initial={{ opacity: 0, y: 60, scale: 0.9 }}
+    animate={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{ 
+      duration: 0.7, 
+      delay: index * 0.1,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }}
+    whileHover={{ 
+      y: -8, 
+      scale: 1.02,
+      transition: { duration: 0.3 }
+    }}
+  >
     {/* Background with blur effect */}
     <div
       className="absolute inset-0 rounded-2xl"
@@ -30,7 +45,7 @@ const BentoCard = ({ title, description, Component }) => (
     <div className="self-stretch h-72 relative -mt-0.5 z-10">
       <Component />
     </div>
-  </div>
+  </motion.div>
 )
 
 export function BentoSection() {
@@ -70,20 +85,41 @@ export function BentoSection() {
   return (
     <section className="w-full px-5 flex flex-col justify-center items-center overflow-visible bg-transparent">
       <div className="w-full py-8 md:py-16 relative flex flex-col justify-start items-start gap-6">
-        <div className="w-[547px] h-[938px] absolute top-[614px] left-[80px] origin-top-left rotate-[-33.39deg] bg-primary/10 blur-[130px] z-0" />
+        <motion.div 
+          className="w-[547px] h-[938px] absolute top-[614px] left-[80px] origin-top-left rotate-[-33.39deg] bg-primary/10 blur-[130px] z-0"
+          animate={{ 
+            y: [0, -20, 0],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{ 
+            duration: 8, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+        />
         <div className="self-stretch py-8 md:py-14 flex flex-col justify-center items-center gap-2 z-10">
           <div className="flex flex-col justify-start items-center gap-4">
-            <h2 className="w-full max-w-[655px] text-center text-foreground text-4xl md:text-6xl font-semibold leading-tight md:leading-[66px]">
+            <motion.h2 
+              className="w-full max-w-[655px] text-center text-foreground text-4xl md:text-6xl font-semibold leading-tight md:leading-[66px]"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
               Our Core Services
-            </h2>
-            <p className="w-full max-w-[600px] text-center text-muted-foreground text-lg md:text-xl font-medium leading-relaxed">
+            </motion.h2>
+            <motion.p 
+              className="w-full max-w-[600px] text-center text-muted-foreground text-lg md:text-xl font-medium leading-relaxed"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
               From custom websites to AI-powered solutions, we deliver professional results that drive business growth and digital transformation.
-            </p>
+            </motion.p>
           </div>
         </div>
         <div className="self-stretch grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 z-10">
-          {cards.map((card) => (
-            <BentoCard key={card.title} {...card} />
+          {cards.map((card, index) => (
+            <BentoCard key={card.title} {...card} index={index} />
           ))}
         </div>
       </div>
