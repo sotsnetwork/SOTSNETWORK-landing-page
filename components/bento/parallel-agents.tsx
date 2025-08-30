@@ -16,7 +16,7 @@ const ParallelCodingAgents: React.FC<ParallelCodingAgentsProps> = ({ className =
     "--pca-text-secondary": "hsl(var(--muted-foreground))",
     "--pca-border-color": "hsl(var(--border))",
     "--pca-border-main": "hsl(var(--border))",
-    "--pca-shadow-color": "rgba(0, 0, 0, 0.12)", // Keeping as is, common shadow
+    "--pca-shadow-color": "rgba(0, 0, 0, 0.12)",
     "--pca-container-background": "hsl(var(--card) / 0.4)",
     "--pca-container-gradient-start": "hsl(var(--card) / 0.4)",
     "--pca-container-gradient-end": "transparent",
@@ -114,20 +114,18 @@ const ParallelCodingAgents: React.FC<ParallelCodingAgentsProps> = ({ className =
   return (
     <div
       className={className}
-      style={
-        {
-          width: "100%",
-          height: "100%",
-          position: "relative",
-          background: `linear-gradient(180deg, var(--pca-container-gradient-start) 0%, var(--pca-container-gradient-end) 100%)`,
-          backdropFilter: "blur(8.372px)",
-          borderRadius: "10.047px",
-          boxSizing: "border-box",
-          flexShrink: 0,
-          margin: "0 auto",
-          ...themeVars,
-        } as React.CSSProperties
-      }
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "relative",
+        background: `linear-gradient(180deg, var(--pca-container-gradient-start) 0%, var(--pca-container-gradient-end) 100%)`,
+        backdropFilter: "blur(8.372px)",
+        borderRadius: "10.047px",
+        boxSizing: "border-box",
+        flexShrink: 0,
+        margin: "0 auto",
+        ...themeVars,
+      } as React.CSSProperties}
       role="img"
       aria-label="Parallel coding agents working on different tasks simultaneously"
     >
@@ -137,18 +135,18 @@ const ParallelCodingAgents: React.FC<ParallelCodingAgentsProps> = ({ className =
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "flex-start", // Changed to flex-start for top alignment
+          justifyContent: "flex-start",
           gap: "16px",
           padding: "20px",
           height: "100%",
-          width: "calc(100% - 48px)", // Adjusted width for 24px margin on both sides
-          background: "linear-gradient(180deg, hsl(var(--primary) / 0.05) 0%, transparent 100%)", // Updated background property
+          width: "calc(100% - 48px)",
+          background: "linear-gradient(180deg, hsl(var(--primary) / 0.05) 0%, transparent 100%)",
           backdropFilter: "blur(16px)",
           borderRadius: "9.628px",
           border: "0.802px solid hsl(var(--border))",
           overflow: "hidden",
           boxSizing: "border-box",
-          margin: "24px 24px 0 24px", // Updated margin to 24px on both sides
+          margin: "24px 24px 0 24px",
         }}
       >
         {agents.map((agent, index) => (
@@ -262,7 +260,7 @@ const ParallelCodingAgents: React.FC<ParallelCodingAgentsProps> = ({ className =
                 {`${agent.tokens} • ${agent.model} • ${agent.branch}`}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
