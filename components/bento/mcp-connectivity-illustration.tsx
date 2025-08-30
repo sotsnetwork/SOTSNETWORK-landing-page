@@ -78,7 +78,7 @@ const McpConnectivityIllustration: React.FC<McpConnectivityIllustrationProps> = 
                 whiteSpace: "nowrap",
               }}
             >
-              Search for servers
+              Search for services
             </span>
           </div>
           {/* Integration List */}
