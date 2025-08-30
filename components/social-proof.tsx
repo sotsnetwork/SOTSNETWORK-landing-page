@@ -4,7 +4,7 @@ export function SocialProof() {
   return (
     <section className="self-stretch py-16 flex flex-col justify-center items-center gap-6 overflow-hidden">
       <div className="text-center text-gray-300 text-sm font-medium leading-tight">
-        Trusted by fast-growing startups
+        Trusted by businesses worldwide
       </div>
       
       {/* Cursor Logo - Prominently displayed */}
