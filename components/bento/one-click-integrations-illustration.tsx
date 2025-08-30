@@ -20,51 +20,51 @@ const OneClickIntegrationsIllustration: React.FC = () => {
         ...themeVars,
       } as React.CSSProperties}
       role="img"
-      aria-label="One-click integrations interface showing various service logos and connection status"
+      aria-label="One-click integrations interface showing various automation tool logos and connection status"
     >
       {/* Integration Grid */}
       <div className="grid grid-cols-4 gap-4 p-6">
         {/* Row 1 */}
         <div className="flex justify-center items-center">
           <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
-            <span className="text-2xl">🔗</span>
+            <span className="text-xs font-semibold text-center text-foreground">Zapier</span>
           </div>
         </div>
         <div className="flex justify-center items-center">
           <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
-            <span className="text-2xl">⚡</span>
+            <span className="text-xs font-semibold text-center text-foreground">Make</span>
           </div>
         </div>
         <div className="flex justify-center items-center">
           <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
-            <span className="text-2xl">🚀</span>
+            <span className="text-xs font-semibold text-center text-foreground">ManyChat</span>
           </div>
         </div>
         <div className="flex justify-center items-center">
           <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
-            <span className="text-2xl">💡</span>
+            <span className="text-xs font-semibold text-center text-foreground">Firebase</span>
           </div>
         </div>
         
         {/* Row 2 */}
         <div className="flex justify-center items-center">
           <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
-            <span className="text-2xl">🔧</span>
+            <span className="text-xs font-semibold text-center text-foreground">Supabase</span>
           </div>
         </div>
         <div className="flex justify-center items-center">
           <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
-            <span className="text-2xl">📊</span>
+            <span className="text-xs font-semibold text-center text-foreground">Airtable</span>
           </div>
         </div>
         <div className="flex justify-center items-center">
           <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
-            <span className="text-2xl">🎯</span>
+            <span className="text-xs font-semibold text-center text-foreground">Notion</span>
           </div>
         </div>
         <div className="flex justify-center items-center">
           <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
-            <span className="text-2xl">🌟</span>
+            <span className="text-xs font-semibold text-center text-foreground">Slack</span>
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@ const OneClickIntegrationsIllustration: React.FC = () => {
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <div className="bg-green-500 text-white px-3 py-1 rounded-full text-sm">
           Connected
-          </div>
+        </div>
       </div>
     </div>
   )
