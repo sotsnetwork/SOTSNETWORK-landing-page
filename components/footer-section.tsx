@@ -40,18 +40,16 @@ export function FooterSection() {
           </div>
         </div>
         <div className="flex flex-col justify-start items-start gap-3">
-          <h3 className="text-foreground text-sm font-semibold leading-6">Company</h3>
-          <div className="flex flex-col justify-start items-start gap-2">
-            <a href="#" className="text-muted-foreground text-sm font-normal leading-6 hover:text-foreground transition-colors">
-              About
-            </a>
-            <a href="#" className="text-muted-foreground text-sm font-normal leading-6 hover:text-foreground transition-colors">
-              Blog
-            </a>
-            <a href="#" className="text-muted-foreground text-sm font-normal leading-6 hover:text-foreground transition-colors">
-              Careers
-            </a>
-          </div>
+          <div className="text-foreground text-sm font-semibold leading-5">Company</div>
+          <a href="#" className="text-muted-foreground text-sm font-medium leading-5 hover:text-foreground transition-colors">
+            About
+          </a>
+          <a href="#" className="text-muted-foreground text-sm font-medium leading-5 hover:text-foreground transition-colors">
+            Blog
+          </a>
+          <a href="#" className="text-muted-foreground text-sm font-medium leading-5 hover:text-foreground transition-colors">
+            Events
+          </a>
         </div>
         <div className="flex flex-col justify-start items-start gap-3">
           <h3 className="text-foreground text-sm font-semibold leading-6">Resources</h3>
