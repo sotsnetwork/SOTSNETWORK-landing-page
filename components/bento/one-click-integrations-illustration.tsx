@@ -1,4 +1,5 @@
 import type React from "react"
+import { motion } from "framer-motion"
 
 interface OneClickIntegrationsIllustrationProps {
   className?: string
@@ -240,14 +241,21 @@ const OneClickIntegrationsIllustration: React.FC<OneClickIntegrationsIllustratio
       >
         {/* Render rows of logo boxes */}
         {Array.from({ length: 4 }).map((_, rowIndex) => (
-          <div
+          <motion.div
             key={rowIndex}
             style={{ display: "flex", justifyContent: "flex-start", alignItems: "center", gap: "16px" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.6, 
+              delay: rowIndex * 0.2,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
           >
             {gridItems.slice(rowIndex * 10, (rowIndex + 1) * 10).map((item, colIndex) => (
               <LogoBox key={colIndex} {...item} />
             ))}
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
