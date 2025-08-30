@@ -1,4 +1,5 @@
 import type React from "react"
+import { motion } from "framer-motion"
 
 interface ParallelCodingAgentsProps {
   className?: string
@@ -151,7 +152,7 @@ const ParallelCodingAgents: React.FC<ParallelCodingAgentsProps> = ({ className =
         }}
       >
         {agents.map((agent, index) => (
-          <div
+          <motion.div
             key={index}
             style={{
               display: "flex",
@@ -170,6 +171,18 @@ const ParallelCodingAgents: React.FC<ParallelCodingAgentsProps> = ({ className =
               position: "relative",
               overflow: "hidden",
               boxSizing: "border-box",
+            }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ 
+              duration: 0.5, 
+              delay: index * 0.2,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+            whileHover={{ 
+              scale: 1.02,
+              x: 5,
+              transition: { duration: 0.2 }
             }}
           >
             {/* Icon container */}
