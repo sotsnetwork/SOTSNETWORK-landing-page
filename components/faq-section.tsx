@@ -119,6 +119,29 @@ export function FAQSection() {
         ))}
       </div>
       
+      {/* Newsletter Subscribe Section */}
+      <div className="relative z-10 mt-16 text-center">
+        <div className="bg-card border border-border rounded-2xl p-8 max-w-2xl mx-auto">
+          <h3 className="text-2xl font-semibold text-foreground mb-3">
+            Stay Updated with SOTS NETWORK
+          </h3>
+          <p className="text-muted-foreground text-lg mb-6">
+            Get the latest insights on AI solutions, web development tips, and business automation strategies delivered to your inbox.
+          </p>
+          <div className="bg-white rounded-lg p-2 inline-block">
+            <iframe 
+              src="https://sotsnetwork.substack.com/embed" 
+              width="480" 
+              height="150" 
+              style={{border:"1px solid #EEE", background:"white"}} 
+              frameBorder="0" 
+              scrolling="no"
+              title="SOTS NETWORK Newsletter Subscription"
+            />
+          </div>
+        </div>
+      </div>
+      
       {/* Debug info - remove this after testing */}
       <div className="relative z-10 mt-8 text-center text-sm text-muted-foreground">
         Debug: {openItems.length} items open
