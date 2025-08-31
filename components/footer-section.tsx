@@ -63,22 +63,6 @@ export function FooterSection() {
         </div>
       </div>
 
-      {/* Middle Section: Newsletter Subscribe */}
-      <div className="flex flex-col justify-center items-center p-4 md:p-8">
-        <h3 className="text-foreground text-lg font-semibold mb-4 text-center">Stay Updated</h3>
-        <div className="bg-white rounded-lg p-2">
-          <iframe 
-            src="https://sotsnetwork.substack.com/embed" 
-            width="480" 
-            height="150" 
-            style={{border:"1px solid #EEE", background:"white"}} 
-            frameBorder="0" 
-            scrolling="no"
-            title="SOTS NETWORK Newsletter Subscription"
-          />
-        </div>
-      </div>
-
       {/* Right Section: Product, Company, Resources */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 p-4 md:p-8 w-full md:w-auto">
         <div className="flex flex-col justify-start items-start gap-3">
