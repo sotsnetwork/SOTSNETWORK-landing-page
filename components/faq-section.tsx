@@ -141,11 +141,6 @@ export function FAQSection() {
           </div>
         </div>
       </div>
-      
-      {/* Debug info - remove this after testing */}
-      <div className="relative z-10 mt-8 text-center text-sm text-muted-foreground">
-        Debug: {openItems.length} items open
-      </div>
     </section>
   )
 }
