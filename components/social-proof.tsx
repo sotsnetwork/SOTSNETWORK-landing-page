@@ -13,7 +13,7 @@ export function SocialProof() {
           <Image
             key={i}
             src={`/logos/logo0${i + 1}.svg`}
-            alt={`Company Logo ${i + 1}`}
+            alt={`Trusted business partner ${i + 1} - SOTS NETWORK client`}
             width={400}
             height={120}
             className="w-full max-w-[400px] h-auto object-contain grayscale opacity-70"
