@@ -6,10 +6,11 @@ export function DashboardPreview() {
       <div className="bg-primary-light/50 rounded-2xl p-2 shadow-2xl">
         <Image
           src="/images/dashboard-preview.png"
-          alt="Dashboard preview"
+          alt="SOTS NETWORK professional dashboard interface showcasing AI solutions and web development services"
           width={1160}
           height={700}
           className="w-full h-full object-cover rounded-xl shadow-lg"
+          priority
         />
       </div>
     </div>
