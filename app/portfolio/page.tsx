@@ -140,7 +140,9 @@ export default function PortfolioPage() {
               View our services
             </Link>
             <a
-              href="mailto:chidera@sotsnetwork.xyz"
+              href="https://calendly.com/sotsnetwork/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex justify-center items-center px-6 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-accent transition-colors"
             >
               Get in touch
