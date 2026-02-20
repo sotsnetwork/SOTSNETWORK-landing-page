@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Header } from "@/components/header"
-import { ArrowLeft, ExternalLink, ShoppingBag, Sparkles, GraduationCap, Users, Heart } from "lucide-react"
+import { ArrowLeft, ExternalLink, ShoppingBag, Sparkles, GraduationCap, Users, Heart, UtensilsCrossed } from "lucide-react"
 
 export const metadata = {
   title: 'Portfolio',
@@ -42,6 +42,13 @@ const projects = [
     description: 'Recruitment and talent-matching web application for organisations — search and manage candidates: plumbers, welders, electricians, caregivers, and other professional service providers.',
     url: 'https://seekca-organisation.vercel.app/',
     icon: Users,
+  },
+  {
+    name: 'Tawakaltu Food Restaurant',
+    tag: 'Restaurant & Food',
+    description: 'Website for Tawakaltu Food Restaurant — showcasing the restaurant and its offerings.',
+    url: 'https://tawakaltu-restaurant-asx4.vercel.app/',
+    icon: UtensilsCrossed,
   },
 ]
 
