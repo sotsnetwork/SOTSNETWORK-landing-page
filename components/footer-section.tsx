@@ -94,8 +94,8 @@ export function FooterSection() {
         <div className="flex flex-col justify-start items-start gap-3">
           <h3 className="text-foreground text-sm font-semibold leading-6">Resources</h3>
           <div className="flex flex-col justify-start items-start gap-2">
-            <a href="#" className="text-muted-foreground text-sm font-normal leading-6 hover:text-foreground transition-colors">
-              Documentation
+            <a href="/portfolio" className="text-muted-foreground text-sm font-normal leading-6 hover:text-foreground transition-colors">
+              Portfolio
             </a>
             <a href="https://calendly.com/sotsnetwork/30min" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm font-normal leading-6 hover:text-foreground transition-colors">
               Help Center
