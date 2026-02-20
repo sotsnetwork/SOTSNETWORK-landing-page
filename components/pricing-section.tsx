@@ -6,21 +6,6 @@ import { Button } from "@/components/ui/button"
 export function PricingSection() {
   const services = [
     {
-      name: "Free Inquiries",
-      price: "Free",
-      description: "Get started with a consultation to understand your needs.",
-      features: [
-        "Initial consultation call",
-        "Project requirements analysis",
-        "Solution recommendations",
-        "No commitment required",
-        "Expert guidance",
-      ],
-      buttonText: "Get Started",
-      buttonClass:
-        "bg-white text-black shadow-lg hover:bg-gray-100 font-bold text-lg py-3 border-2 border-gray-300",
-    },
-    {
       name: "Website & Landing Page",
       price: "Custom Quote",
       description: "Professional website and landing page development.",
@@ -35,8 +20,9 @@ export function PricingSection() {
       ],
       buttonText: "Get Quote",
       buttonClass:
-        "bg-primary text-white shadow-lg hover:bg-primary/90 font-bold text-lg py-3 border-2 border-primary/50",
+        "bg-white text-black shadow-lg hover:bg-gray-100 font-bold text-lg py-3 border-2 border-gray-300",
       popular: true,
+      neutralCard: true,
     },
     {
       name: "MVP",
@@ -52,6 +38,22 @@ export function PricingSection() {
         "Deployment & launch support",
       ],
       buttonText: "Get Quote",
+      buttonClass:
+        "bg-primary text-white shadow-lg hover:bg-primary/90 font-bold text-lg py-3 border-2 border-primary/50",
+      highlighted: true,
+    },
+    {
+      name: "Free Inquiries",
+      price: "Free",
+      description: "Get started with a consultation to understand your needs.",
+      features: [
+        "Initial consultation call",
+        "Project requirements analysis",
+        "Solution recommendations",
+        "No commitment required",
+        "Expert guidance",
+      ],
+      buttonText: "Get Started",
       buttonClass:
         "bg-white text-black shadow-lg hover:bg-gray-100 font-bold text-lg py-3 border-2 border-gray-300",
     },
@@ -75,7 +77,7 @@ export function PricingSection() {
             <div
               key={index}
               className={`relative p-6 md:p-8 rounded-2xl border transition-all duration-300 hover:scale-105 ${
-                service.popular
+                (service.popular && !service.neutralCard) || service.highlighted
                   ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
                   : "border-border bg-card/50 hover:border-primary/30"
               }`}
