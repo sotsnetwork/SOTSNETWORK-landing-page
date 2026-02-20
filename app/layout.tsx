@@ -76,11 +76,6 @@ export const metadata: Metadata = {
     shortcut: '/the real logo.png',
     apple: '/the real logo.png',
   },
-  verification: {
-    // Add your verification codes here when available
-    // google: 'your-google-verification-code',
-    // yandex: 'your-yandex-verification-code',
-  },
 }
 
 export default function RootLayout({
