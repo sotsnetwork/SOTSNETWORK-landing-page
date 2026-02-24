@@ -20,9 +20,12 @@ export function Header() {
     { name: "Features", href: "#features-section" },
     { name: "Pricing", href: "#pricing-section" },
     { name: "Testimonials", href: "#testimonials-section" }, // Changed from Docs to Testimonials
+    { name: "Portfolio", href: "/portfolio" },
   ]
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith("#")) return
+
     e.preventDefault()
     if (!isMounted) return
     
