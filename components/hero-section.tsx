@@ -1,43 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
+import React from "react"
 import { Header } from "./header"
-import Link from "next/link"
 import Image from "next/image"
 
 export function HeroSection() {
-  const rotatingWords = ["WEBSITE", "WEB APP", "NATIVE APP"]
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [displayedText, setDisplayedText] = useState("")
-  const [charIndex, setCharIndex] = useState(0)
-  const [isPausing, setIsPausing] = useState(false)
-
-  useEffect(() => {
-    if (isPausing) {
-      const pauseTimeout = setTimeout(() => {
-        setIsPausing(false)
-        setCharIndex(0)
-        setCurrentIndex((prev) => (prev + 1) % rotatingWords.length)
-      }, 1200)
-
-      return () => clearTimeout(pauseTimeout)
-    }
-
-    const currentWord = rotatingWords[currentIndex]
-
-    if (charIndex <= currentWord.length) {
-      const typeTimeout = setTimeout(() => {
-        setDisplayedText(currentWord.slice(0, charIndex))
-        setCharIndex((prev) => prev + 1)
-      }, 90)
-
-      return () => clearTimeout(typeTimeout)
-    } else {
-      setIsPausing(true)
-    }
-  }, [charIndex, currentIndex, isPausing, rotatingWords])
-
   return (
     <section
       className="flex flex-col items-center text-center relative mx-auto rounded-2xl overflow-hidden my-6 py-0 px-4
@@ -473,12 +440,7 @@ export function HeroSection() {
 
       <div className="relative z-10 space-y-4 md:space-y-5 lg:space-y-6 mb-6 md:mb-7 lg:mb-9 max-w-md md:max-w-[500px] lg:max-w-[900px] mt-16 md:mt-[120px] lg:mt-[160px] px-4">
         <h1 className="text-center text-foreground text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-tight lg:leading-tight">
-          GET YOUR BUSINESS A
-          <br />
-          <span className="inline-block min-w-[10ch]">
-            {displayedText}
-            <span className="inline-block w-[1ch] animate-pulse">|</span>
-          </span>
+          THE AI & SOFTWARE DEVELOPMENT AGENCY
         </h1>
         <p className="text-muted-foreground text-base md:text-base lg:text-lg font-medium leading-relaxed max-w-lg mx-auto">
           People search online before they trust, call or buy from you—get your business a website, web or mobile app today.
