@@ -20,7 +20,7 @@ export function FooterSection() {
             <div className="text-center text-foreground text-xl font-semibold leading-4">SOTS NETWORK</div>
           </div>
         </div>
-        <p className="text-foreground/90 text-sm font-medium leading-[18px] text-left">AI & Web Solutions</p>
+        <p className="text-foreground/90 text-sm font-medium leading-[18px] text-left">THE AI & SOFTWARE DEVELOPMENT AGENCY</p>
         <div className="flex justify-start items-start gap-3">
           <a href="https://x.com/realpaulchidera" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-4 h-4 flex items-center justify-center hover:text-primary transition-colors">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
