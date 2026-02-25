@@ -440,7 +440,7 @@ export function HeroSection() {
 
       <div className="relative z-10 space-y-4 md:space-y-5 lg:space-y-6 mb-6 md:mb-7 lg:mb-9 max-w-md md:max-w-[500px] lg:max-w-[900px] mt-16 md:mt-[120px] lg:mt-[160px] px-4">
         <h1 className="text-center text-foreground text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-tight lg:leading-tight">
-          THE AI & SOFTWARE DEVELOPMENT AGENCY
+          THE AI & SOFTWARE <span className="whitespace-nowrap">DEVELOPMENT AGENCY</span>
         </h1>
         <p className="text-muted-foreground text-base md:text-base lg:text-lg font-medium leading-relaxed max-w-lg mx-auto">
           People search online before they trust, call or buy from you—get your business a website, web or mobile app today.
